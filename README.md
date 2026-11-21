@@ -1,4 +1,4 @@
-<div align="center">
+ <div align="center">
 
 <!-- ANIMATED HEADER BANNER -->
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f0c29,50:302b63,100:0EA5E9&height=200&section=header&text=🌑%20LUNARIS&fontSize=72&fontColor=38BDF8&fontAlignY=38&desc=LunaSafe%20AI%20·%20ISRO%20Chandrayaan%20Lava%20Tube%20Intelligence%20Platform&descSize=16&descAlignY=58&descColor=94A3B8&animation=fadeIn" width="100%"/>
