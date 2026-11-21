@@ -1,0 +1,74 @@
+{
+  "candidate_id": "LLT-002",
+  "region_name": "Mare Tranquillitatis",
+  "coordinates": {
+    "lat": 8.335,
+    "lon": 33.222
+  },
+  "claim_type": "CLAIM_1_OBSERVABLE_PIT",
+  "detection_summary": {
+    "target": "Observable Surface Collapse Skylight",
+    "collar_diameter_m": 98.4,
+    "measured_depth_m": 104.2,
+    "depth_to_diameter_ratio": 1.06,
+    "detection_confidence": 0.94,
+    "morphology": "Quasi-circular steep-walled collapse pit in high-Ti mare basalt",
+    "floor_rubble_cone": "Slumped debris cone visible extending towards west wall",
+    "primary_source": "Chandrayaan-2 OHRC & LROC NAC"
+  },
+  "evidence_ledger": [
+    {
+      "evidence_id": "EV-MTP-OPT",
+      "modality": "optical",
+      "feature_name": "pit_shadow_collar",
+      "observed_value": 0.94,
+      "status": "IMPLEMENTED",
+      "origin_category": "REAL",
+      "quality_state": "ACCEPTED",
+      "source_id": "CH2_OHRC_20201115",
+      "nominal_weight": 1.0
+    },
+    {
+      "evidence_id": "EV-MTP-DEM",
+      "modality": "dem",
+      "feature_name": "steep_depression_depth",
+      "observed_value": 0.91,
+      "status": "IMPLEMENTED",
+      "origin_category": "REAL",
+      "quality_state": "ACCEPTED",
+      "source_id": "CH2_TMC2_DEM_ORB4120",
+      "nominal_weight": 1.0
+    },
+    {
+      "evidence_id": "EV-MTP-RAD",
+      "modality": "radar",
+      "feature_name": "subsurface_conduit_backscatter_echo",
+      "observed_value": 0.82,
+      "status": "IMPLEMENTED",
+      "origin_category": "REAL",
+      "quality_state": "ACCEPTED",
+      "source_id": "LRO_MINIRF_CARRER2024",
+      "nominal_weight": 1.0
+    },
+    {
+      "evidence_id": "EV-MTP-GEO",
+      "modality": "geology",
+      "feature_name": "mare_tranquillitatis_basalt_unit",
+      "observed_value": 0.88,
+      "status": "IMPLEMENTED",
+      "origin_category": "REAL",
+      "quality_state": "ACCEPTED",
+      "source_id": "USGS_LGC_MAP",
+      "nominal_weight": 1.0
+    }
+  ],
+  "active_contradictions": [],
+  "missing_modalities": [
+    "High-frequency subsurface radar sounding",
+    "In-situ ground truth"
+  ],
+  "abstain": false,
+  "abstain_reason": null,
+  "status": "VALIDATED_OBSERVABLE_PIT_CANDIDATE",
+  "scientific_disclaimer": "Claim 1 (Pit Detection) is validated against published lunar catalogs (Robinson 2012, Wagner 2014). Claim 2 (Subsurface Tube) is unobservable; no probability is calculated. Orbital radar reflections (Carrer 2024) provide conduit evidence, but cannot certify void integrity or astronaut safety."
+}

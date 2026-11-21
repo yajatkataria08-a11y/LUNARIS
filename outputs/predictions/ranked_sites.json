@@ -1,0 +1,876 @@
+[
+  {
+    "id": "LLT-001",
+    "name": "Marius Hills Hole",
+    "region": "Oceanus Procellarum",
+    "lat": 14.09,
+    "lon": -56.72,
+    "terrain": "Mare",
+    "profile": "SCIENTIFIC_INVESTIGATION",
+    "passed_gates": true,
+    "disqualification_reason": null,
+    "gate_status": "GATES_PASSED_ELIGIBLE_FOR_RANKING",
+    "research_priority_score": 95.6,
+    "researchPriorityScore": 95.6,
+    "credible_interval_95": [
+      93.4,
+      97.6
+    ],
+    "credibleInterval95": [
+      93.4,
+      97.6
+    ],
+    "status": "RANKED",
+    "ranking_status": "RANKED",
+    "simulated_structural_scenarios": {
+      "is_simulated_scenario": true,
+      "assumed_span_range_m": [
+        40.0,
+        80.0
+      ],
+      "assumed_roof_thickness_range_m": [
+        10.0,
+        30.0
+      ],
+      "fs_range": [
+        1.4,
+        16.8
+      ],
+      "crown_tension_range_mpa": [
+        0.06,
+        0.71
+      ],
+      "stability_index_range": [
+        0.64,
+        0.95
+      ],
+      "median_factor_of_safety": 5.0,
+      "governing_category": "NOMINALLY STABLE (STATIC)",
+      "risk_flags": [
+        "Marginal stability under lunar seismic shaking (PGA margin < 1.5)"
+      ],
+      "rock_mass_parameters": {
+        "density_kg_m3": 2800.0,
+        "reduced_tensile_cutoff_mpa": 1.0,
+        "reduced_compressive_strength_mpa": 35.0,
+        "note": "Accounts for jointed and impact-fractured rock mass; NOT intact basalt."
+      }
+    },
+    "profile_inputs": {
+      "optical_pit_evidence": 0.92,
+      "radar_scattering_anomaly": 0.84,
+      "topographic_depression_depth": 0.5,
+      "gravity_mass_deficit": 0.71
+    },
+    "weight_sensitivities": {
+      "optical_pit_evidence": 0.305,
+      "radar_scattering_anomaly": 0.134,
+      "topographic_depression_depth": -0.475,
+      "gravity_mass_deficit": -0.029
+    },
+    "rank": 1,
+    "habitatScore": 95.6,
+    "scoreLow": 93.4,
+    "scoreHigh": 97.6,
+    "isro_lhi": {
+      "site_id": "LLT-001",
+      "site_name": "Marius Hills Hole",
+      "region": "Oceanus Procellarum",
+      "isro_lhi_score": 95.6,
+      "credible_interval_95": [
+        93.4,
+        97.6
+      ],
+      "credibleInterval95": [
+        93.4,
+        97.6
+      ],
+      "exploration_tier": "TIER_1_PRIORITY_CANDIDATE",
+      "tier_label": "Tier 1: Priority Lunar Habitat Candidate (High-Resolution Void Evidence)",
+      "sub_scores": {
+        "ohrc_overhang_score": 96.6,
+        "dfsar_polarimetry_score": 90.2,
+        "tmc2_slope_access_score": 93.7,
+        "physics_fos_stability_score": 100.0,
+        "chaste_thermal_insulation_score": 100.0
+      },
+      "chaste_thermal_diagnostics": {
+        "source": "ISRO Chandrayaan-3 ChaSTE In-Situ Calibration",
+        "roof_thickness_m": 10.0,
+        "skin_depth_m": 0.127,
+        "thermal_damping_ratio": 1.0,
+        "subterranean_temp_range_c": [
+          -20.0,
+          -20.0
+        ],
+        "surface_temp_swing_c": 250.0,
+        "thermal_stability_score": 1.0,
+        "insulation_status": "EXCELLENT_THERMAL_BUFFER"
+      },
+      "dfsar_polarimetric_diagnostics": {
+        "m_chi_cavity_roof_intactness": 0.94,
+        "polarimetric_mode": "Fully Polarimetric L-band Stokes Decomposition",
+        "dielectric_permittivity_range": [
+          6.8,
+          8.1
+        ]
+      },
+      "isro_primary_datasources": [
+        "ISRO ISSDC PRADAN Chandrayaan-2 OHRC (0.25 m/px optical radiance)",
+        "ISRO ISSDC PRADAN Chandrayaan-2 TMC-2 (5 m stereo DTM elevation)",
+        "ISRO ISSDC PRADAN Chandrayaan-2 DFSAR (L-band & S-band polarimetry)",
+        "Chandrayaan-3 ChaSTE In-Situ Regolith Thermal Gradient Data (2023)",
+        "Chandrayaan-1 HySI / M3 High-Titanium Ilmenite Mineralogy (Arya et al. 2011)"
+      ],
+      "methodology_grounding": "Formulated from Arya et al. (2011, Current Science), Sinha et al. (2024, ISPRS), Bhardwaj et al. (2021, Current Science), Vijayan et al. (2021, IEEE TGRS), and Chandrayaan-3 ChaSTE in-situ thermophysical findings (2023)."
+    }
+  },
+  {
+    "id": "LLT-002",
+    "name": "Mare Tranquillitatis Pit",
+    "region": "Mare Tranquillitatis",
+    "lat": 8.335,
+    "lon": 33.222,
+    "terrain": "Mare",
+    "profile": "SCIENTIFIC_INVESTIGATION",
+    "passed_gates": true,
+    "disqualification_reason": null,
+    "gate_status": "GATES_PASSED_ELIGIBLE_FOR_RANKING",
+    "research_priority_score": 94.7,
+    "researchPriorityScore": 94.7,
+    "credible_interval_95": [
+      92.5,
+      96.7
+    ],
+    "credibleInterval95": [
+      92.5,
+      96.7
+    ],
+    "status": "RANKED",
+    "ranking_status": "RANKED",
+    "simulated_structural_scenarios": {
+      "is_simulated_scenario": true,
+      "assumed_span_range_m": [
+        35.0,
+        55.0
+      ],
+      "assumed_roof_thickness_range_m": [
+        8.0,
+        25.0
+      ],
+      "fs_range": [
+        2.4,
+        18.3
+      ],
+      "crown_tension_range_mpa": [
+        0.05,
+        0.42
+      ],
+      "stability_index_range": [
+        0.84,
+        0.95
+      ],
+      "median_factor_of_safety": 7.3,
+      "governing_category": "NOMINALLY STABLE (STATIC)",
+      "risk_flags": [],
+      "rock_mass_parameters": {
+        "density_kg_m3": 2800.0,
+        "reduced_tensile_cutoff_mpa": 1.0,
+        "reduced_compressive_strength_mpa": 35.0,
+        "note": "Accounts for jointed and impact-fractured rock mass; NOT intact basalt."
+      }
+    },
+    "profile_inputs": {
+      "optical_pit_evidence": 0.91,
+      "radar_scattering_anomaly": 0.8,
+      "topographic_depression_depth": 0.95,
+      "gravity_mass_deficit": 0.65
+    },
+    "weight_sensitivities": {
+      "optical_pit_evidence": 0.118,
+      "radar_scattering_anomaly": -0.127,
+      "topographic_depression_depth": 0.103,
+      "gravity_mass_deficit": -0.131
+    },
+    "rank": 2,
+    "habitatScore": 94.7,
+    "scoreLow": 92.5,
+    "scoreHigh": 96.7,
+    "isro_lhi": {
+      "site_id": "LLT-002",
+      "site_name": "Mare Tranquillitatis Pit",
+      "region": "Mare Tranquillitatis",
+      "isro_lhi_score": 94.7,
+      "credible_interval_95": [
+        92.5,
+        96.7
+      ],
+      "credibleInterval95": [
+        92.5,
+        96.7
+      ],
+      "exploration_tier": "TIER_1_PRIORITY_CANDIDATE",
+      "tier_label": "Tier 1: Priority Lunar Habitat Candidate (High-Resolution Void Evidence)",
+      "sub_scores": {
+        "ohrc_overhang_score": 95.6,
+        "dfsar_polarimetry_score": 88.4,
+        "tmc2_slope_access_score": 92.9,
+        "physics_fos_stability_score": 100.0,
+        "chaste_thermal_insulation_score": 100.0
+      },
+      "chaste_thermal_diagnostics": {
+        "source": "ISRO Chandrayaan-3 ChaSTE In-Situ Calibration",
+        "roof_thickness_m": 8.0,
+        "skin_depth_m": 0.127,
+        "thermal_damping_ratio": 1.0,
+        "subterranean_temp_range_c": [
+          -20.0,
+          -20.0
+        ],
+        "surface_temp_swing_c": 250.0,
+        "thermal_stability_score": 1.0,
+        "insulation_status": "EXCELLENT_THERMAL_BUFFER"
+      },
+      "dfsar_polarimetric_diagnostics": {
+        "m_chi_cavity_roof_intactness": 0.94,
+        "polarimetric_mode": "Fully Polarimetric L-band Stokes Decomposition",
+        "dielectric_permittivity_range": [
+          6.8,
+          8.1
+        ]
+      },
+      "isro_primary_datasources": [
+        "ISRO ISSDC PRADAN Chandrayaan-2 OHRC (0.25 m/px optical radiance)",
+        "ISRO ISSDC PRADAN Chandrayaan-2 TMC-2 (5 m stereo DTM elevation)",
+        "ISRO ISSDC PRADAN Chandrayaan-2 DFSAR (L-band & S-band polarimetry)",
+        "Chandrayaan-3 ChaSTE In-Situ Regolith Thermal Gradient Data (2023)",
+        "Chandrayaan-1 HySI / M3 High-Titanium Ilmenite Mineralogy (Arya et al. 2011)"
+      ],
+      "methodology_grounding": "Formulated from Arya et al. (2011, Current Science), Sinha et al. (2024, ISPRS), Bhardwaj et al. (2021, Current Science), Vijayan et al. (2021, IEEE TGRS), and Chandrayaan-3 ChaSTE in-situ thermophysical findings (2023)."
+    }
+  },
+  {
+    "id": "LLT-006",
+    "name": "Mare Ingenii Pit",
+    "region": "Mare Ingenii (Farside Swirl)",
+    "lat": -35.95,
+    "lon": 166.06,
+    "terrain": "Mare",
+    "profile": "SCIENTIFIC_INVESTIGATION",
+    "passed_gates": true,
+    "disqualification_reason": null,
+    "gate_status": "GATES_PASSED_ELIGIBLE_FOR_RANKING",
+    "research_priority_score": 93.0,
+    "researchPriorityScore": 93.0,
+    "credible_interval_95": [
+      90.8,
+      95.0
+    ],
+    "credibleInterval95": [
+      90.8,
+      95.0
+    ],
+    "status": "RANKED",
+    "ranking_status": "RANKED",
+    "simulated_structural_scenarios": {
+      "is_simulated_scenario": true,
+      "assumed_span_range_m": [
+        35.0,
+        65.0
+      ],
+      "assumed_roof_thickness_range_m": [
+        15.0,
+        35.0
+      ],
+      "fs_range": [
+        2.1,
+        14.5
+      ],
+      "crown_tension_range_mpa": [
+        0.08,
+        0.55
+      ],
+      "stability_index_range": [
+        0.72,
+        0.94
+      ],
+      "median_factor_of_safety": 6.2,
+      "governing_category": "NOMINALLY STABLE (STATIC)",
+      "risk_flags": [],
+      "rock_mass_parameters": {
+        "density_kg_m3": 2950.0,
+        "reduced_tensile_cutoff_mpa": 1.2,
+        "reduced_compressive_strength_mpa": 38.0,
+        "note": "Mare Ingenii basalt flow with high local crustal magnetic field shielding."
+      }
+    },
+    "profile_inputs": {
+      "optical_pit_evidence": 0.88,
+      "radar_scattering_anomaly": 0.76,
+      "topographic_depression_depth": 0.68,
+      "gravity_mass_deficit": 0.58
+    },
+    "weight_sensitivities": {
+      "optical_pit_evidence": 0.28,
+      "radar_scattering_anomaly": 0.22,
+      "topographic_depression_depth": 0.15,
+      "gravity_mass_deficit": 0.1
+    },
+    "rank": 3,
+    "habitatScore": 93.0,
+    "scoreLow": 90.8,
+    "scoreHigh": 95.0,
+    "isro_lhi": {
+      "site_id": "LLT-006",
+      "site_name": "Mare Ingenii Pit",
+      "region": "Mare Ingenii (Farside Swirl)",
+      "isro_lhi_score": 93.0,
+      "credible_interval_95": [
+        90.8,
+        95.0
+      ],
+      "credibleInterval95": [
+        90.8,
+        95.0
+      ],
+      "exploration_tier": "TIER_1_PRIORITY_CANDIDATE",
+      "tier_label": "Tier 1: Priority Lunar Habitat Candidate (High-Resolution Void Evidence)",
+      "sub_scores": {
+        "ohrc_overhang_score": 92.4,
+        "dfsar_polarimetry_score": 86.6,
+        "tmc2_slope_access_score": 90.5,
+        "physics_fos_stability_score": 100.0,
+        "chaste_thermal_insulation_score": 100.0
+      },
+      "chaste_thermal_diagnostics": {
+        "source": "ISRO Chandrayaan-3 ChaSTE In-Situ Calibration",
+        "roof_thickness_m": 15.0,
+        "skin_depth_m": 0.127,
+        "thermal_damping_ratio": 1.0,
+        "subterranean_temp_range_c": [
+          -20.0,
+          -20.0
+        ],
+        "surface_temp_swing_c": 250.0,
+        "thermal_stability_score": 1.0,
+        "insulation_status": "EXCELLENT_THERMAL_BUFFER"
+      },
+      "dfsar_polarimetric_diagnostics": {
+        "m_chi_cavity_roof_intactness": 0.94,
+        "polarimetric_mode": "Fully Polarimetric L-band Stokes Decomposition",
+        "dielectric_permittivity_range": [
+          6.8,
+          8.1
+        ]
+      },
+      "isro_primary_datasources": [
+        "ISRO ISSDC PRADAN Chandrayaan-2 OHRC (0.25 m/px optical radiance)",
+        "ISRO ISSDC PRADAN Chandrayaan-2 TMC-2 (5 m stereo DTM elevation)",
+        "ISRO ISSDC PRADAN Chandrayaan-2 DFSAR (L-band & S-band polarimetry)",
+        "Chandrayaan-3 ChaSTE In-Situ Regolith Thermal Gradient Data (2023)",
+        "Chandrayaan-1 HySI / M3 High-Titanium Ilmenite Mineralogy (Arya et al. 2011)"
+      ],
+      "methodology_grounding": "Formulated from Arya et al. (2011, Current Science), Sinha et al. (2024, ISPRS), Bhardwaj et al. (2021, Current Science), Vijayan et al. (2021, IEEE TGRS), and Chandrayaan-3 ChaSTE in-situ thermophysical findings (2023)."
+    }
+  },
+  {
+    "id": "LLT-005",
+    "name": "Imbrium Rim Candidate",
+    "region": "Mare Imbrium",
+    "lat": 33.4,
+    "lon": -12.9,
+    "terrain": "Mare",
+    "profile": "SCIENTIFIC_INVESTIGATION",
+    "passed_gates": true,
+    "disqualification_reason": null,
+    "gate_status": "GATES_PASSED_ELIGIBLE_FOR_RANKING",
+    "research_priority_score": 63.9,
+    "researchPriorityScore": 63.9,
+    "credible_interval_95": [
+      60.1,
+      67.3
+    ],
+    "credibleInterval95": [
+      60.1,
+      67.3
+    ],
+    "status": "NEEDS_DATA",
+    "ranking_status": "NEEDS_DATA",
+    "simulated_structural_scenarios": {
+      "is_simulated_scenario": true,
+      "assumed_span_range_m": [
+        30.0,
+        50.0
+      ],
+      "assumed_roof_thickness_range_m": [
+        15.0,
+        40.0
+      ],
+      "fs_range": [
+        5.4,
+        39.8
+      ],
+      "crown_tension_range_mpa": [
+        0.03,
+        0.19
+      ],
+      "stability_index_range": [
+        0.95,
+        0.95
+      ],
+      "median_factor_of_safety": 14.9,
+      "governing_category": "NOMINALLY STABLE (STATIC)",
+      "risk_flags": [],
+      "rock_mass_parameters": {
+        "density_kg_m3": 2800.0,
+        "reduced_tensile_cutoff_mpa": 1.0,
+        "reduced_compressive_strength_mpa": 35.0,
+        "note": "Accounts for jointed and impact-fractured rock mass; NOT intact basalt."
+      }
+    },
+    "profile_inputs": {
+      "optical_pit_evidence": 0.55,
+      "radar_scattering_anomaly": 0.48,
+      "topographic_depression_depth": 0.5,
+      "gravity_mass_deficit": 0.5
+    },
+    "weight_sensitivities": {
+      "optical_pit_evidence": 0.058,
+      "radar_scattering_anomaly": -0.041,
+      "topographic_depression_depth": -0.05,
+      "gravity_mass_deficit": 0.047
+    },
+    "rank": 4,
+    "habitatScore": 63.9,
+    "scoreLow": 60.1,
+    "scoreHigh": 67.3,
+    "isro_lhi": {
+      "site_id": "LLT-005",
+      "site_name": "Imbrium Rim Candidate",
+      "region": "Mare Imbrium",
+      "isro_lhi_score": 63.9,
+      "credible_interval_95": [
+        60.1,
+        67.3
+      ],
+      "credibleInterval95": [
+        60.1,
+        67.3
+      ],
+      "exploration_tier": "TIER_2_INVESTIGATION_TARGET",
+      "tier_label": "Tier 2: Intermediate Exploration Target (Requires High-Resolution Radar Sounding)",
+      "sub_scores": {
+        "ohrc_overhang_score": 38.5,
+        "dfsar_polarimetry_score": 50.8,
+        "tmc2_slope_access_score": 64.5,
+        "physics_fos_stability_score": 100.0,
+        "chaste_thermal_insulation_score": 100.0
+      },
+      "chaste_thermal_diagnostics": {
+        "source": "ISRO Chandrayaan-3 ChaSTE In-Situ Calibration",
+        "roof_thickness_m": 15.0,
+        "skin_depth_m": 0.127,
+        "thermal_damping_ratio": 1.0,
+        "subterranean_temp_range_c": [
+          -20.0,
+          -20.0
+        ],
+        "surface_temp_swing_c": 250.0,
+        "thermal_stability_score": 1.0,
+        "insulation_status": "EXCELLENT_THERMAL_BUFFER"
+      },
+      "dfsar_polarimetric_diagnostics": {
+        "m_chi_cavity_roof_intactness": 0.55,
+        "polarimetric_mode": "Fully Polarimetric L-band Stokes Decomposition",
+        "dielectric_permittivity_range": [
+          6.8,
+          8.1
+        ]
+      },
+      "isro_primary_datasources": [
+        "ISRO ISSDC PRADAN Chandrayaan-2 OHRC (0.25 m/px optical radiance)",
+        "ISRO ISSDC PRADAN Chandrayaan-2 TMC-2 (5 m stereo DTM elevation)",
+        "ISRO ISSDC PRADAN Chandrayaan-2 DFSAR (L-band & S-band polarimetry)",
+        "Chandrayaan-3 ChaSTE In-Situ Regolith Thermal Gradient Data (2023)",
+        "Chandrayaan-1 HySI / M3 High-Titanium Ilmenite Mineralogy (Arya et al. 2011)"
+      ],
+      "methodology_grounding": "Formulated from Arya et al. (2011, Current Science), Sinha et al. (2024, ISPRS), Bhardwaj et al. (2021, Current Science), Vijayan et al. (2021, IEEE TGRS), and Chandrayaan-3 ChaSTE in-situ thermophysical findings (2023)."
+    }
+  },
+  {
+    "id": "LLT-003",
+    "name": "Serenitatis Collapse Chain",
+    "region": "Mare Serenitatis",
+    "lat": 24.6,
+    "lon": 20.1,
+    "terrain": "Rille",
+    "profile": "SCIENTIFIC_INVESTIGATION",
+    "passed_gates": true,
+    "disqualification_reason": null,
+    "gate_status": "GATES_PASSED_ELIGIBLE_FOR_RANKING",
+    "research_priority_score": 56.0,
+    "researchPriorityScore": 56.0,
+    "credible_interval_95": [
+      52.2,
+      59.4
+    ],
+    "credibleInterval95": [
+      52.2,
+      59.4
+    ],
+    "status": "RANKED",
+    "ranking_status": "RANKED",
+    "simulated_structural_scenarios": {
+      "is_simulated_scenario": true,
+      "assumed_span_range_m": [
+        30.0,
+        50.0
+      ],
+      "assumed_roof_thickness_range_m": [
+        5.0,
+        15.0
+      ],
+      "fs_range": [
+        1.8,
+        14.9
+      ],
+      "crown_tension_range_mpa": [
+        0.07,
+        0.56
+      ],
+      "stability_index_range": [
+        0.75,
+        0.95
+      ],
+      "median_factor_of_safety": 5.5,
+      "governing_category": "NOMINALLY STABLE (STATIC)",
+      "risk_flags": [
+        "High aspect ratio regime (span/thickness > 8:1)"
+      ],
+      "rock_mass_parameters": {
+        "density_kg_m3": 2800.0,
+        "reduced_tensile_cutoff_mpa": 1.0,
+        "reduced_compressive_strength_mpa": 35.0,
+        "note": "Accounts for jointed and impact-fractured rock mass; NOT intact basalt."
+      }
+    },
+    "profile_inputs": {
+      "optical_pit_evidence": 0.8,
+      "radar_scattering_anomaly": 0.66,
+      "topographic_depression_depth": 0.3333333333333333,
+      "gravity_mass_deficit": 0.48
+    },
+    "weight_sensitivities": {
+      "optical_pit_evidence": 0.249,
+      "radar_scattering_anomaly": 0.058,
+      "topographic_depression_depth": -0.319,
+      "gravity_mass_deficit": -0.035
+    },
+    "rank": 5,
+    "habitatScore": 56.0,
+    "scoreLow": 52.2,
+    "scoreHigh": 59.4,
+    "isro_lhi": {
+      "site_id": "LLT-003",
+      "site_name": "Serenitatis Collapse Chain",
+      "region": "Mare Serenitatis",
+      "isro_lhi_score": 56.0,
+      "credible_interval_95": [
+        52.2,
+        59.4
+      ],
+      "credibleInterval95": [
+        52.2,
+        59.4
+      ],
+      "exploration_tier": "TIER_3_PRELIMINARY_INTEREST",
+      "tier_label": "Tier 3: Preliminary Interest (Steep Slopes / Unconfirmed Overhang)",
+      "sub_scores": {
+        "ohrc_overhang_score": 56.0,
+        "dfsar_polarimetry_score": 61.6,
+        "tmc2_slope_access_score": 24.5,
+        "physics_fos_stability_score": 100.0,
+        "chaste_thermal_insulation_score": 100.0
+      },
+      "chaste_thermal_diagnostics": {
+        "source": "ISRO Chandrayaan-3 ChaSTE In-Situ Calibration",
+        "roof_thickness_m": 5.0,
+        "skin_depth_m": 0.127,
+        "thermal_damping_ratio": 1.0,
+        "subterranean_temp_range_c": [
+          -20.0,
+          -20.0
+        ],
+        "surface_temp_swing_c": 250.0,
+        "thermal_stability_score": 1.0,
+        "insulation_status": "EXCELLENT_THERMAL_BUFFER"
+      },
+      "dfsar_polarimetric_diagnostics": {
+        "m_chi_cavity_roof_intactness": 0.55,
+        "polarimetric_mode": "Fully Polarimetric L-band Stokes Decomposition",
+        "dielectric_permittivity_range": [
+          6.8,
+          8.1
+        ]
+      },
+      "isro_primary_datasources": [
+        "ISRO ISSDC PRADAN Chandrayaan-2 OHRC (0.25 m/px optical radiance)",
+        "ISRO ISSDC PRADAN Chandrayaan-2 TMC-2 (5 m stereo DTM elevation)",
+        "ISRO ISSDC PRADAN Chandrayaan-2 DFSAR (L-band & S-band polarimetry)",
+        "Chandrayaan-3 ChaSTE In-Situ Regolith Thermal Gradient Data (2023)",
+        "Chandrayaan-1 HySI / M3 High-Titanium Ilmenite Mineralogy (Arya et al. 2011)"
+      ],
+      "methodology_grounding": "Formulated from Arya et al. (2011, Current Science), Sinha et al. (2024, ISPRS), Bhardwaj et al. (2021, Current Science), Vijayan et al. (2021, IEEE TGRS), and Chandrayaan-3 ChaSTE in-situ thermophysical findings (2023)."
+    }
+  },
+  {
+    "id": "LLT-007",
+    "name": "Rima Hyginus Volcanic Caldera",
+    "region": "Central Lowlands",
+    "lat": 7.8,
+    "lon": 6.3,
+    "terrain": "Rille",
+    "profile": "SCIENTIFIC_INVESTIGATION",
+    "passed_gates": true,
+    "disqualification_reason": null,
+    "gate_status": "GATES_PASSED_ELIGIBLE_FOR_RANKING",
+    "research_priority_score": 55.1,
+    "researchPriorityScore": 55.1,
+    "credible_interval_95": [
+      51.3,
+      58.5
+    ],
+    "credibleInterval95": [
+      51.3,
+      58.5
+    ],
+    "status": "RANKED",
+    "ranking_status": "RANKED",
+    "simulated_structural_scenarios": {
+      "is_simulated_scenario": true,
+      "assumed_span_range_m": [
+        45.0,
+        75.0
+      ],
+      "assumed_roof_thickness_range_m": [
+        12.0,
+        28.0
+      ],
+      "fs_range": [
+        1.8,
+        11.2
+      ],
+      "crown_tension_range_mpa": [
+        0.12,
+        0.62
+      ],
+      "stability_index_range": [
+        0.65,
+        0.88
+      ],
+      "median_factor_of_safety": 5.8,
+      "governing_category": "NOMINALLY STABLE (STATIC)",
+      "risk_flags": [
+        "Segmented volcanic graben scarp"
+      ],
+      "rock_mass_parameters": {
+        "density_kg_m3": 2850.0,
+        "reduced_tensile_cutoff_mpa": 1.0,
+        "reduced_compressive_strength_mpa": 36.0,
+        "note": "Pyroclastic volcanic collapse crater along linear graben."
+      }
+    },
+    "profile_inputs": {
+      "optical_pit_evidence": 0.78,
+      "radar_scattering_anomaly": 0.62,
+      "topographic_depression_depth": 0.45,
+      "gravity_mass_deficit": 0.52
+    },
+    "weight_sensitivities": {
+      "optical_pit_evidence": 0.25,
+      "radar_scattering_anomaly": 0.2,
+      "topographic_depression_depth": 0.12,
+      "gravity_mass_deficit": 0.08
+    },
+    "rank": 6,
+    "habitatScore": 55.1,
+    "scoreLow": 51.3,
+    "scoreHigh": 58.5,
+    "isro_lhi": {
+      "site_id": "LLT-007",
+      "site_name": "Rima Hyginus Volcanic Caldera",
+      "region": "Central Lowlands",
+      "isro_lhi_score": 55.1,
+      "credible_interval_95": [
+        51.3,
+        58.5
+      ],
+      "credibleInterval95": [
+        51.3,
+        58.5
+      ],
+      "exploration_tier": "TIER_3_PRELIMINARY_INTEREST",
+      "tier_label": "Tier 3: Preliminary Interest (Steep Slopes / Unconfirmed Overhang)",
+      "sub_scores": {
+        "ohrc_overhang_score": 54.6,
+        "dfsar_polarimetry_score": 59.2,
+        "tmc2_slope_access_score": 24.5,
+        "physics_fos_stability_score": 100.0,
+        "chaste_thermal_insulation_score": 100.0
+      },
+      "chaste_thermal_diagnostics": {
+        "source": "ISRO Chandrayaan-3 ChaSTE In-Situ Calibration",
+        "roof_thickness_m": 12.0,
+        "skin_depth_m": 0.127,
+        "thermal_damping_ratio": 1.0,
+        "subterranean_temp_range_c": [
+          -20.0,
+          -20.0
+        ],
+        "surface_temp_swing_c": 250.0,
+        "thermal_stability_score": 1.0,
+        "insulation_status": "EXCELLENT_THERMAL_BUFFER"
+      },
+      "dfsar_polarimetric_diagnostics": {
+        "m_chi_cavity_roof_intactness": 0.55,
+        "polarimetric_mode": "Fully Polarimetric L-band Stokes Decomposition",
+        "dielectric_permittivity_range": [
+          6.8,
+          8.1
+        ]
+      },
+      "isro_primary_datasources": [
+        "ISRO ISSDC PRADAN Chandrayaan-2 OHRC (0.25 m/px optical radiance)",
+        "ISRO ISSDC PRADAN Chandrayaan-2 TMC-2 (5 m stereo DTM elevation)",
+        "ISRO ISSDC PRADAN Chandrayaan-2 DFSAR (L-band & S-band polarimetry)",
+        "Chandrayaan-3 ChaSTE In-Situ Regolith Thermal Gradient Data (2023)",
+        "Chandrayaan-1 HySI / M3 High-Titanium Ilmenite Mineralogy (Arya et al. 2011)"
+      ],
+      "methodology_grounding": "Formulated from Arya et al. (2011, Current Science), Sinha et al. (2024, ISPRS), Bhardwaj et al. (2021, Current Science), Vijayan et al. (2021, IEEE TGRS), and Chandrayaan-3 ChaSTE in-situ thermophysical findings (2023)."
+    }
+  },
+  {
+    "id": "LLT-004",
+    "name": "Fecunditatis Sinuous Rille",
+    "region": "Mare Fecunditatis",
+    "lat": -4.2,
+    "lon": 50.5,
+    "terrain": "Rille",
+    "profile": "SCIENTIFIC_INVESTIGATION",
+    "passed_gates": true,
+    "disqualification_reason": null,
+    "gate_status": "GATES_PASSED_ELIGIBLE_FOR_RANKING",
+    "research_priority_score": 52.2,
+    "researchPriorityScore": 52.2,
+    "credible_interval_95": [
+      48.4,
+      55.6
+    ],
+    "credibleInterval95": [
+      48.4,
+      55.6
+    ],
+    "status": "RANKED",
+    "ranking_status": "RANKED",
+    "simulated_structural_scenarios": {
+      "is_simulated_scenario": true,
+      "assumed_span_range_m": [
+        40.0,
+        70.0
+      ],
+      "assumed_roof_thickness_range_m": [
+        15.0,
+        35.0
+      ],
+      "fs_range": [
+        2.7,
+        19.6
+      ],
+      "crown_tension_range_mpa": [
+        0.05,
+        0.36
+      ],
+      "stability_index_range": [
+        0.91,
+        0.95
+      ],
+      "median_factor_of_safety": 7.4,
+      "governing_category": "NOMINALLY STABLE (STATIC)",
+      "risk_flags": [],
+      "rock_mass_parameters": {
+        "density_kg_m3": 2800.0,
+        "reduced_tensile_cutoff_mpa": 1.0,
+        "reduced_compressive_strength_mpa": 35.0,
+        "note": "Accounts for jointed and impact-fractured rock mass; NOT intact basalt."
+      }
+    },
+    "profile_inputs": {
+      "optical_pit_evidence": 0.7,
+      "radar_scattering_anomaly": 0.5,
+      "topographic_depression_depth": 0.5,
+      "gravity_mass_deficit": 0.4
+    },
+    "weight_sensitivities": {
+      "optical_pit_evidence": 0.178,
+      "radar_scattering_anomaly": -0.073,
+      "topographic_depression_depth": -0.095,
+      "gravity_mass_deficit": -0.029
+    },
+    "rank": 7,
+    "habitatScore": 52.2,
+    "scoreLow": 48.4,
+    "scoreHigh": 55.6,
+    "isro_lhi": {
+      "site_id": "LLT-004",
+      "site_name": "Fecunditatis Sinuous Rille",
+      "region": "Mare Fecunditatis",
+      "isro_lhi_score": 52.2,
+      "credible_interval_95": [
+        48.4,
+        55.6
+      ],
+      "credibleInterval95": [
+        48.4,
+        55.6
+      ],
+      "exploration_tier": "TIER_3_PRELIMINARY_INTEREST",
+      "tier_label": "Tier 3: Preliminary Interest (Steep Slopes / Unconfirmed Overhang)",
+      "sub_scores": {
+        "ohrc_overhang_score": 49.0,
+        "dfsar_polarimetry_score": 52.0,
+        "tmc2_slope_access_score": 24.5,
+        "physics_fos_stability_score": 100.0,
+        "chaste_thermal_insulation_score": 100.0
+      },
+      "chaste_thermal_diagnostics": {
+        "source": "ISRO Chandrayaan-3 ChaSTE In-Situ Calibration",
+        "roof_thickness_m": 15.0,
+        "skin_depth_m": 0.127,
+        "thermal_damping_ratio": 1.0,
+        "subterranean_temp_range_c": [
+          -20.0,
+          -20.0
+        ],
+        "surface_temp_swing_c": 250.0,
+        "thermal_stability_score": 1.0,
+        "insulation_status": "EXCELLENT_THERMAL_BUFFER"
+      },
+      "dfsar_polarimetric_diagnostics": {
+        "m_chi_cavity_roof_intactness": 0.55,
+        "polarimetric_mode": "Fully Polarimetric L-band Stokes Decomposition",
+        "dielectric_permittivity_range": [
+          6.8,
+          8.1
+        ]
+      },
+      "isro_primary_datasources": [
+        "ISRO ISSDC PRADAN Chandrayaan-2 OHRC (0.25 m/px optical radiance)",
+        "ISRO ISSDC PRADAN Chandrayaan-2 TMC-2 (5 m stereo DTM elevation)",
+        "ISRO ISSDC PRADAN Chandrayaan-2 DFSAR (L-band & S-band polarimetry)",
+        "Chandrayaan-3 ChaSTE In-Situ Regolith Thermal Gradient Data (2023)",
+        "Chandrayaan-1 HySI / M3 High-Titanium Ilmenite Mineralogy (Arya et al. 2011)"
+      ],
+      "methodology_grounding": "Formulated from Arya et al. (2011, Current Science), Sinha et al. (2024, ISPRS), Bhardwaj et al. (2021, Current Science), Vijayan et al. (2021, IEEE TGRS), and Chandrayaan-3 ChaSTE in-situ thermophysical findings (2023)."
+    }
+  }
+]

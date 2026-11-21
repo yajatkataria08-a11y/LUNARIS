@@ -1,0 +1,259 @@
+{
+  "metadata": {
+    "dossier_id": "DOSSIER_LLT-004_20261122",
+    "generated_at": "2026-11-21T19:45:56.028681+00:00",
+    "mission_context": "LunaSafe AI - Lunar Lava Tube Habitat & Stability Mapper",
+    "framework": "ISRO Chandrayaan Remote Sensing & Geomechanical Assessment"
+  },
+  "candidate_profile": {
+    "site_id": "LLT-004",
+    "name": "Fecunditatis Sinuous Rille",
+    "region": "Mare Fecunditatis",
+    "coordinates": {
+      "lat": -4.2,
+      "lon": 50.5
+    },
+    "terrain_type": "Rille",
+    "status": "RANKED"
+  },
+  "scoring_evaluation": {
+    "isro_lhi_score": 52.0,
+    "exploration_tier": "TIER_3_PRELIMINARY_INTEREST",
+    "tier_label": "Tier 3: Preliminary Interest (Steep Slopes / Unconfirmed Overhang)",
+    "isro_sub_scores": {
+      "ohrc_overhang_score": 49.0,
+      "dfsar_polarimetry_score": 51.0,
+      "tmc2_slope_access_score": 24.5,
+      "physics_fos_stability_score": 100.0,
+      "chaste_thermal_insulation_score": 100.0
+    },
+    "ai_ensemble_score": 82.1,
+    "ai_priority_grade": "A",
+    "epistemic_model_variance": 0.1669,
+    "base_model_consensus": {
+      "xgboost": 0.99,
+      "lightgbm": 0.0033,
+      "random_forest": 0.79,
+      "mlp": 0.9999
+    },
+    "mcda_heuristic_score": 50.1,
+    "credible_interval_95": [
+      44.6,
+      55.4
+    ]
+  },
+  "shap_game_theoretic_explainability": {
+    "base_value_expectation": -0.0,
+    "total_attribution_shift": 4.593,
+    "top_favorable_drivers": [
+      {
+        "feature": "optical_pit_area_px",
+        "feature_label": "Pit Interior Pixel Area",
+        "actual_value": 7853.98,
+        "shap_attribution": 4.593,
+        "contribution_pct": 459.3,
+        "impact_direction": "INCREASED_SUITABILITY",
+        "description": "optical_pit_area_px = 7853.98 contributed +4.593 to the habitat score."
+      }
+    ],
+    "top_risk_factors": [
+      {
+        "feature": "optical_pit_diameter_m",
+        "feature_label": "Pit Equivalent Diameter",
+        "actual_value": 50.0,
+        "shap_attribution": 0.0,
+        "contribution_pct": 0.0,
+        "impact_direction": "DECREASED_SUITABILITY",
+        "description": "optical_pit_diameter_m = 50.00 contributed +0.000 to the habitat score."
+      },
+      {
+        "feature": "optical_aspect_ratio",
+        "feature_label": "Pit Opening Regularity",
+        "actual_value": 0.72,
+        "shap_attribution": 0.0,
+        "contribution_pct": 0.0,
+        "impact_direction": "DECREASED_SUITABILITY",
+        "description": "optical_aspect_ratio = 0.72 contributed +0.000 to the habitat score."
+      },
+      {
+        "feature": "optical_shadow_contrast",
+        "feature_label": "Shadow Interior Contrast",
+        "actual_value": 0.15,
+        "shap_attribution": 0.0,
+        "contribution_pct": 0.0,
+        "impact_direction": "DECREASED_SUITABILITY",
+        "description": "optical_shadow_contrast = 0.15 contributed +0.000 to the habitat score."
+      }
+    ],
+    "explanation_method": "SHAP TreeExplainer (Game-Theoretic Axioms Verified)"
+  },
+  "primary_isro_chandrayaan_data_sources": [
+    {
+      "instrument": "Chandrayaan-2 OHRC (0.25 m/pixel)",
+      "portal": "ISRO ISSDC PRADAN (https://pradan.issdc.gov.in/ch2/)",
+      "measurement": "Sub-meter shadow stereogrammetry & lateral overhang inspection (Sinha et al. 2024)"
+    },
+    {
+      "instrument": "Chandrayaan-2 TMC-2 (5.0 m/pixel)",
+      "portal": "ISRO ISSDC PRADAN (https://pradan.issdc.gov.in/ch2/)",
+      "measurement": "3D Stereo DTM elevation, approach slope, and RMS roughness (Arya et al. 2011)"
+    },
+    {
+      "instrument": "Chandrayaan-2 DFSAR (2.0 m/pixel)",
+      "portal": "ISRO ISSDC PRADAN (https://pradan.issdc.gov.in/ch2/)",
+      "measurement": "L-band polarimetric CPR & m-chi double-bounce scattering (Bhardwaj et al. 2021, Vijayan et al. 2021)"
+    },
+    {
+      "instrument": "Chandrayaan-3 ChaSTE In-Situ Probe",
+      "measurement": "Real in-situ regolith thermal gradient (60\u00b0C plunge within 10 cm; ChaSTE Team 2023)"
+    },
+    {
+      "instrument": "Chandrayaan-1 HySI / M3",
+      "measurement": "Titanium dioxide (TiO2 > 6 wt%) & ilmenite tensile strength competence (Bhattacharya 2012)"
+    }
+  ],
+  "geomechanical_scenarios": {
+    "is_simulated_scenario": true,
+    "assumed_span_range_m": [
+      40.0,
+      70.0
+    ],
+    "assumed_roof_thickness_range_m": [
+      15.0,
+      35.0
+    ],
+    "fs_range": [
+      2.7,
+      19.6
+    ],
+    "crown_tension_range_mpa": [
+      0.05,
+      0.36
+    ],
+    "stability_index_range": [
+      0.91,
+      0.95
+    ],
+    "median_factor_of_safety": 7.4,
+    "governing_category": "NOMINALLY STABLE (STATIC)",
+    "risk_flags": [],
+    "rock_mass_parameters": {
+      "density_kg_m3": 2800.0,
+      "reduced_tensile_cutoff_mpa": 1.0,
+      "reduced_compressive_strength_mpa": 35.0,
+      "note": "Accounts for jointed and impact-fractured rock mass; NOT intact basalt."
+    }
+  },
+  "scientific_disclaimer": "LunaSafe AI is a planetary research decision-support prototype. Remote sensing measurements provide indirect geological evidence; underground cavern void geometry and ceiling continuity require in-situ micro-rover exploration.",
+  "engineering_remediation_roadmap": {
+    "site_id": "LLT-004",
+    "site_name": "Fecunditatis Sinuous Rille",
+    "region": "Mare Fecunditatis",
+    "baseline_lhi_score": 52.0,
+    "baseline_tier": "TIER_3_PRELIMINARY_INTEREST",
+    "remediated_lhi_score": 89.8,
+    "remediated_tier": "TIER_1_PRIORITY_CANDIDATE",
+    "score_delta": 37.8,
+    "bottleneck_resolved": "Unroofed meandering volcanic canyon; zero natural overhead radiation/thermal shielding",
+    "sensing_upgrade": "High-resolution 0.25m OHRC stereogrammetry scans the 45km rille length to locate surviving natural basalt bridges and optimal anchor bedrock shelves along the vertical canyon walls.",
+    "engineering_architecture": "Trench-and-Cover Planetary Architecture: Utilize the 40m deep vertical basalt canyon walls as pre-excavated lateral radiation barriers. Deploy lightweight carbon-fiber/tensegrity trusses spanning the 45m canyon rim, clad in basalt-fiber geotextiles and covered with a 3.5m regolith berm.",
+    "mitigated_risks": [
+      "Extreme diurnal thermal cycling eliminated",
+      "Cosmic radiation exposure shielded"
+    ],
+    "remediated_sub_scores": {
+      "ohrc_overhang_score": 86.0,
+      "dfsar_polarimetry_score": 85.0,
+      "tmc2_slope_access_score": 98.0,
+      "physics_fos_stability_score": 89.0,
+      "chaste_thermal_insulation_score": 100.0
+    },
+    "operational_status": "ENGINEERED_TIER_1_VIABLE"
+  },
+  "track1_inversion_assessment": {
+    "site_id": "LLT-004",
+    "site_name": "Fecunditatis Sinuous Rille",
+    "region": "Mare Fecunditatis",
+    "baseline_lhi_score": 50.0,
+    "track1_inversion_score": 35.0,
+    "track1_status": "OPEN_FORMATION_REQUIRES_TRACK2",
+    "photoclinometric_sfs": {
+      "lommel_seeliger_factor": 0.419,
+      "solar_incidence_angle_deg": 44.0,
+      "emission_angle_deg": 2.4,
+      "macro_slope_lola_deg": 10.0,
+      "micro_slope_inverted_deg": 8.5,
+      "terrace_access_viable": true,
+      "undercut_distance_m": 0.5,
+      "overhang_detection_status": "OPEN_CHANNEL_NO_OVERHANG",
+      "has_horizontal_conduit_entry": false
+    },
+    "dfsar_radar_sounding": {
+      "l_band_penetration_depth_est_m": 4.5,
+      "differential_l_s_sigma0_db": 1.2,
+      "circular_polarization_ratio_cpr": 0.38,
+      "double_bounce_scattering_power_m_chi": 0.15,
+      "dfsar_radar_signature": "FLAT_BASALTIC_CHANNEL_FLOOR_SCATTERING",
+      "is_subsurface_dielectric_boundary": false
+    },
+    "radar_tomography_carrer_model": {
+      "subsurface_conduit_confirmed": false,
+      "conduit_length_m": 0.0,
+      "conduit_width_m": 48.0,
+      "estimated_roof_thickness_m": 0.0,
+      "tomographic_confidence_pct": 35.0,
+      "conduit_geometry_classification": "OPEN_SINUOUS_RILLE_TRENCH",
+      "scientific_assessment_summary": "Track 1 confirms an open lava channel with vertical 40m walls but zero ceiling roof. Ideal candidate for Track 2 trench-and-cover.",
+      "methodology_citation": "Carrer, Pozzobon, Bruzzone et al. (Nature Astronomy, July 2024); Bhardwaj et al. (2021)."
+    }
+  },
+  "geomorphology_classification": {
+    "site_id": "LLT-004",
+    "site_name": "Fecunditatis Sinuous Rille",
+    "primary_geomorphology_class": "SINUOUS_LAVA_RILLE_CANYON",
+    "classification_confidence_pct": 94.2,
+    "class_probabilities": {
+      "SINUOUS_LAVA_RILLE_CANYON": 0.942,
+      "TECTONIC_VOLCANIC_GRABEN_CALDERA": 0.038,
+      "DISCONTINUOUS_CATENA_COLLAPSE": 0.012,
+      "INTACT_LAVA_TUBE_SKYLIGHT": 0.005,
+      "SUB_RIM_IMPACT_MARGIN_CAVITY": 0.003
+    },
+    "eccentricity": 0.965,
+    "geomorphic_description": "Meandering open lava river channel with near-vertical basalt walls and flat floor.",
+    "optimal_habitat_engineering_track": "TRACK_2_TRENCH_AND_COVER",
+    "detection_f1_score": 0.938
+  },
+  "specialized_engineering_blueprint": {
+    "blueprint_type": "TRENCH_AND_COVER_SPACE_ARCHITECTURE",
+    "target_candidate": "LLT-004 Fecunditatis Sinuous Rille",
+    "canyon_dimensions": {
+      "span_m": 45.0,
+      "depth_m": 40.0,
+      "usable_cross_section_m2": 1800.0
+    },
+    "structural_cover_system": {
+      "truss_architecture": "Deployable Carbon-Fiber / Titanium Tensegrity Arch",
+      "truss_span_m": 45.0,
+      "regolith_berm_thickness_m": 3.5,
+      "structural_dead_load_kpa": 10.21,
+      "factor_of_safety_truss": 4.8
+    },
+    "shielding_performance": {
+      "unshielded_surface_radiation_msv_yr": 380.0,
+      "shielded_subsurface_radiation_msv_yr": 2.4,
+      "radiation_attenuation_pct": 99.37,
+      "thermal_equilibrium_celsius": -20.5,
+      "diurnal_swing_eliminated": "From [-130\u00b0C to +120\u00b0C] down to constant [-20.5\u00b0C \u00b1 0.8\u00b0C]"
+    },
+    "earthmoving_logistics": {
+      "regolith_berm_volume_per_100m_m3": 15750.0,
+      "grading_rover_hours_required": 140.0,
+      "autonomous_grader_fleet_size": 3
+    },
+    "pressurized_habitat_capacity": {
+      "habitable_volume_per_100m_m3": 180000.0,
+      "crew_capacity_supported": 36
+    }
+  }
+}

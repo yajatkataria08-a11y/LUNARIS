@@ -1,0 +1,29 @@
+# LunaSafe AI - Training Configuration
+segmentation:
+  model: "UNet2D"
+  in_channels: 1
+  num_classes: 2
+  encoder_channels: [16, 32, 64, 128]
+  learning_rate: 0.001
+  batch_size: 16
+  epochs: 25
+  loss: "dice_bce"
+  dice_weight: 0.6
+  bce_weight: 0.4
+  threshold: 0.5
+
+tabular_baselines:
+  models: ["LogisticRegression", "RandomForest", "XGBoost", "MLP"]
+  cv_folds: 5
+  random_state: 42
+  metrics: ["accuracy", "precision", "recall", "f1", "roc_auc", "brier_score"]
+
+simulation:
+  density_kg_m3: [2600.0, 3100.0]
+  youngs_modulus_gpa: [10.0, 60.0]
+  poissons_ratio: [0.20, 0.28]
+  tensile_strength_mpa: [2.0, 15.0]
+  compressive_strength_mpa: [50.0, 200.0]
+  lunar_gravity_m_s2: 1.62
+  roof_thickness_range_m: [5.0, 80.0]
+  span_range_m: [30.0, 400.0]

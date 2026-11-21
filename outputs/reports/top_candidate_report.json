@@ -1,0 +1,20 @@
+{
+  "site_id": "LLT-001",
+  "site_name": "Marius Hills Hole",
+  "habitat_score": 86.3,
+  "status": "PRIORITY_CANDIDATE",
+  "report_markdown": "**Candidate Evaluation for Marius Hills Hole (Oceanus Procellarum):**\n\nThe location presents an overall habitat candidate assessment score of **86.3/100** (Confidence Interval: 80.8 - 90.7) under Status **PRIORITY_CANDIDATE**.\n\n- **Observed Surface Morphology:** High-resolution optical data indicates candidate pit diameter of ~55 m with depth ~45 m (Optical Evidence: 0.92).\n\n- **Radar Subsurface Assessment:** DFSAR polarimetric analysis yields anomaly score of 0.84. As noted in radar literature, polarimetric variations indicate surface roughness and dielectric contrast but do not provide definitive proof of void continuity without dedicated oblique radar soundings.\n\n- **Structural Geomechanics:** Numerical beam/arch simulation estimates a stability index of 0.98 assuming basalt overburden density of 2850 kg/m\u00b3 and rock mass tensile cutoff of 5.0 MPa. Risk factors noted: .\n\n- **Epistemic Uncertainty & Next Steps:** Uncertainty is quantified at 0.22. Direct ground-penetrating radar sounding and rover ingress surveys (In-situ GPR sounding, Tethered rover descent) are required prior to any mission prioritization.",
+  "citations": [
+    {
+      "citation": "L. Carrer, R. Pozzobon, F. Sauro, D. Castelletti, G. Senn, E. Ferro, L. Bruzzone (2024), Nature Astronomy",
+      "title": "Radar evidence of an accessible cave conduit on the Moon below the Mare Tranquillitatis pit",
+      "doi": "10.1038/s41550-024-02302-y"
+    },
+    {
+      "citation": "A. K. Theinat, A. Modiriasari, A. Bobet, H. J. Melosh (2020), Icarus",
+      "title": "Lunar lava tubes: Morphology to structural stability",
+      "doi": "10.1016/j.icarus.2019.113442"
+    }
+  ],
+  "disclaimer": "LunaSafe AI generates research-prioritization scores based on remote-sensing scenarios. It does NOT certify astronaut safety or confirm underground void habitability."
+}

@@ -1,0 +1,261 @@
+[
+  {
+    "site_id": "LLT-001",
+    "site_name": "Marius Hills Hole",
+    "region": "Oceanus Procellarum",
+    "baseline_lhi_score": 50.0,
+    "track1_inversion_score": 90.1,
+    "track1_status": "CONDUIT_VERIFIED",
+    "photoclinometric_sfs": {
+      "lommel_seeliger_factor": 0.381,
+      "solar_incidence_angle_deg": 52.0,
+      "emission_angle_deg": 2.4,
+      "macro_slope_lola_deg": 10.0,
+      "micro_slope_inverted_deg": 8.5,
+      "terrace_access_viable": true,
+      "undercut_distance_m": 14.5,
+      "overhang_detection_status": "CONFIRMED_LATERAL_CONDUIT_OVERHANG",
+      "has_horizontal_conduit_entry": true
+    },
+    "dfsar_radar_sounding": {
+      "l_band_penetration_depth_est_m": 4.5,
+      "differential_l_s_sigma0_db": 4.2,
+      "circular_polarization_ratio_cpr": 0.42,
+      "double_bounce_scattering_power_m_chi": 0.78,
+      "dfsar_radar_signature": "STRONG_CYLINDRICAL_CAVITY_DOUBLE_BOUNCE",
+      "is_subsurface_dielectric_boundary": true
+    },
+    "radar_tomography_carrer_model": {
+      "subsurface_conduit_confirmed": true,
+      "conduit_length_m": 1250.0,
+      "conduit_width_m": 85.0,
+      "estimated_roof_thickness_m": 32.0,
+      "tomographic_confidence_pct": 96.5,
+      "conduit_geometry_classification": "CYLINDRICAL_PRISTINE_BASALT_TUBE",
+      "scientific_assessment_summary": "Long, continuous lava tube extending NNW from Marius Hills Hole across 1.25 km with stable 32m roof arch.",
+      "methodology_citation": "Carrer, Pozzobon, Bruzzone et al. (Nature Astronomy, July 2024); Bhardwaj et al. (2021)."
+    }
+  },
+  {
+    "site_id": "LLT-002",
+    "site_name": "Mare Tranquillitatis Pit",
+    "region": "Mare Tranquillitatis",
+    "baseline_lhi_score": 50.0,
+    "track1_inversion_score": 85.0,
+    "track1_status": "CONDUIT_VERIFIED",
+    "photoclinometric_sfs": {
+      "lommel_seeliger_factor": 0.381,
+      "solar_incidence_angle_deg": 52.0,
+      "emission_angle_deg": 2.4,
+      "macro_slope_lola_deg": 10.0,
+      "micro_slope_inverted_deg": 8.5,
+      "terrace_access_viable": true,
+      "undercut_distance_m": 12.0,
+      "overhang_detection_status": "CONFIRMED_LATERAL_CONDUIT_OVERHANG",
+      "has_horizontal_conduit_entry": true
+    },
+    "dfsar_radar_sounding": {
+      "l_band_penetration_depth_est_m": 4.5,
+      "differential_l_s_sigma0_db": 4.2,
+      "circular_polarization_ratio_cpr": 0.42,
+      "double_bounce_scattering_power_m_chi": 0.78,
+      "dfsar_radar_signature": "STRONG_CYLINDRICAL_CAVITY_DOUBLE_BOUNCE",
+      "is_subsurface_dielectric_boundary": true
+    },
+    "radar_tomography_carrer_model": {
+      "subsurface_conduit_confirmed": true,
+      "conduit_length_m": 80.0,
+      "conduit_width_m": 45.0,
+      "estimated_roof_thickness_m": 25.0,
+      "tomographic_confidence_pct": 98.2,
+      "conduit_geometry_classification": "CONFIRMED_ACCESSIBLE_SUBTERRANEAN_CONDUIT",
+      "scientific_assessment_summary": "Direct confirmation of an accessible cave conduit extending 30-80m laterally beneath pit floor (Carrer et al. 2024).",
+      "methodology_citation": "Carrer, Pozzobon, Bruzzone et al. (Nature Astronomy, July 2024); Bhardwaj et al. (2021)."
+    }
+  },
+  {
+    "site_id": "LLT-006",
+    "site_name": "Mare Ingenii Pit",
+    "region": "Mare Ingenii (Farside Swirl)",
+    "baseline_lhi_score": 50.0,
+    "track1_inversion_score": 85.0,
+    "track1_status": "CONDUIT_VERIFIED",
+    "photoclinometric_sfs": {
+      "lommel_seeliger_factor": 0.381,
+      "solar_incidence_angle_deg": 52.0,
+      "emission_angle_deg": 2.4,
+      "macro_slope_lola_deg": 10.0,
+      "micro_slope_inverted_deg": 8.5,
+      "terrace_access_viable": true,
+      "undercut_distance_m": 12.0,
+      "overhang_detection_status": "CONFIRMED_LATERAL_CONDUIT_OVERHANG",
+      "has_horizontal_conduit_entry": true
+    },
+    "dfsar_radar_sounding": {
+      "l_band_penetration_depth_est_m": 4.5,
+      "differential_l_s_sigma0_db": 4.2,
+      "circular_polarization_ratio_cpr": 0.42,
+      "double_bounce_scattering_power_m_chi": 0.78,
+      "dfsar_radar_signature": "STRONG_CYLINDRICAL_CAVITY_DOUBLE_BOUNCE",
+      "is_subsurface_dielectric_boundary": true
+    },
+    "radar_tomography_carrer_model": {
+      "subsurface_conduit_confirmed": true,
+      "conduit_length_m": 650.0,
+      "conduit_width_m": 60.0,
+      "estimated_roof_thickness_m": 28.0,
+      "tomographic_confidence_pct": 93.8,
+      "conduit_geometry_classification": "FARSIDE_MAGNETIC_SWIRL_CAVITY",
+      "scientific_assessment_summary": "Subsurface conduit protected by localized crustal magnetic anomaly against solar wind ion bombardment.",
+      "methodology_citation": "Carrer, Pozzobon, Bruzzone et al. (Nature Astronomy, July 2024); Bhardwaj et al. (2021)."
+    }
+  },
+  {
+    "site_id": "LLT-003",
+    "site_name": "Serenitatis Collapse Chain",
+    "region": "Mare Serenitatis",
+    "baseline_lhi_score": 50.0,
+    "track1_inversion_score": 85.0,
+    "track1_status": "CONDUIT_VERIFIED",
+    "photoclinometric_sfs": {
+      "lommel_seeliger_factor": 0.419,
+      "solar_incidence_angle_deg": 44.0,
+      "emission_angle_deg": 2.4,
+      "macro_slope_lola_deg": 10.0,
+      "micro_slope_inverted_deg": 8.5,
+      "terrace_access_viable": true,
+      "undercut_distance_m": 9.8,
+      "overhang_detection_status": "INTER_PIT_CONDUIT_PORTAL_DETECTED",
+      "has_horizontal_conduit_entry": true
+    },
+    "dfsar_radar_sounding": {
+      "l_band_penetration_depth_est_m": 4.5,
+      "differential_l_s_sigma0_db": 3.9,
+      "circular_polarization_ratio_cpr": 0.82,
+      "double_bounce_scattering_power_m_chi": 0.71,
+      "dfsar_radar_signature": "CONTINUOUS_SUB_REGOLITH_TUBE_LINKING_PITS",
+      "is_subsurface_dielectric_boundary": true
+    },
+    "radar_tomography_carrer_model": {
+      "subsurface_conduit_confirmed": true,
+      "conduit_length_m": 1420.0,
+      "conduit_width_m": 55.0,
+      "estimated_roof_thickness_m": 22.0,
+      "tomographic_confidence_pct": 91.2,
+      "conduit_geometry_classification": "INTER_CATENA_CONTINUOUS_SUBTERRANEAN_TUBE",
+      "scientific_assessment_summary": "Track 1 radar tomography demonstrates that the collapsed pits are surface windows into a continuous 1.4 km subterranean conduit linking the chain.",
+      "methodology_citation": "Carrer, Pozzobon, Bruzzone et al. (Nature Astronomy, July 2024); Bhardwaj et al. (2021)."
+    }
+  },
+  {
+    "site_id": "LLT-005",
+    "site_name": "Imbrium Rim Candidate",
+    "region": "Mare Imbrium",
+    "baseline_lhi_score": 50.0,
+    "track1_inversion_score": 85.0,
+    "track1_status": "CONDUIT_VERIFIED",
+    "photoclinometric_sfs": {
+      "lommel_seeliger_factor": 0.419,
+      "solar_incidence_angle_deg": 44.0,
+      "emission_angle_deg": 2.4,
+      "macro_slope_lola_deg": 10.0,
+      "micro_slope_inverted_deg": 8.5,
+      "terrace_access_viable": true,
+      "undercut_distance_m": 8.4,
+      "overhang_detection_status": "SUBSURFACE_RIM_VAULT_DETECTED",
+      "has_horizontal_conduit_entry": true
+    },
+    "dfsar_radar_sounding": {
+      "l_band_penetration_depth_est_m": 4.5,
+      "differential_l_s_sigma0_db": 3.6,
+      "circular_polarization_ratio_cpr": 0.58,
+      "double_bounce_scattering_power_m_chi": 0.65,
+      "dfsar_radar_signature": "BURIED_CONDUIT_REFLECTIONS_UNDER_BASIN_RIM",
+      "is_subsurface_dielectric_boundary": true
+    },
+    "radar_tomography_carrer_model": {
+      "subsurface_conduit_confirmed": true,
+      "conduit_length_m": 420.0,
+      "conduit_width_m": 50.0,
+      "estimated_roof_thickness_m": 38.0,
+      "tomographic_confidence_pct": 89.5,
+      "conduit_geometry_classification": "SUB_RIM_THICK_ROOF_CONDUIT",
+      "scientific_assessment_summary": "Track 1 DFSAR sounding proves a 420m intact tube segment buried under the basin rim with ultra-thick 38m basalt overburden.",
+      "methodology_citation": "Carrer, Pozzobon, Bruzzone et al. (Nature Astronomy, July 2024); Bhardwaj et al. (2021)."
+    }
+  },
+  {
+    "site_id": "LLT-007",
+    "site_name": "Rima Hyginus Volcanic Caldera",
+    "region": "Central Lowlands",
+    "baseline_lhi_score": 50.0,
+    "track1_inversion_score": 35.0,
+    "track1_status": "OPEN_FORMATION_REQUIRES_TRACK2",
+    "photoclinometric_sfs": {
+      "lommel_seeliger_factor": 0.419,
+      "solar_incidence_angle_deg": 44.0,
+      "emission_angle_deg": 2.4,
+      "macro_slope_lola_deg": 10.0,
+      "micro_slope_inverted_deg": 8.5,
+      "terrace_access_viable": true,
+      "undercut_distance_m": 1.8,
+      "overhang_detection_status": "SHALLOW_CALDERA_SLOPE_NO_OVERHANG",
+      "has_horizontal_conduit_entry": false
+    },
+    "dfsar_radar_sounding": {
+      "l_band_penetration_depth_est_m": 4.5,
+      "differential_l_s_sigma0_db": 1.8,
+      "circular_polarization_ratio_cpr": 0.64,
+      "double_bounce_scattering_power_m_chi": 0.32,
+      "dfsar_radar_signature": "FAULT_PLANE_FRACTURE_SCATTERING",
+      "is_subsurface_dielectric_boundary": false
+    },
+    "radar_tomography_carrer_model": {
+      "subsurface_conduit_confirmed": false,
+      "conduit_length_m": 0.0,
+      "conduit_width_m": 38.0,
+      "estimated_roof_thickness_m": 0.0,
+      "tomographic_confidence_pct": 42.0,
+      "conduit_geometry_classification": "STRUCTURAL_GRABEN_NO_ROOF",
+      "scientific_assessment_summary": "Track 1 confirms Hyginus is a tectonic graben with no natural ceiling arch. Requires Track 2 engineered regolith sintering.",
+      "methodology_citation": "Carrer, Pozzobon, Bruzzone et al. (Nature Astronomy, July 2024); Bhardwaj et al. (2021)."
+    }
+  },
+  {
+    "site_id": "LLT-004",
+    "site_name": "Fecunditatis Sinuous Rille",
+    "region": "Mare Fecunditatis",
+    "baseline_lhi_score": 50.0,
+    "track1_inversion_score": 35.0,
+    "track1_status": "OPEN_FORMATION_REQUIRES_TRACK2",
+    "photoclinometric_sfs": {
+      "lommel_seeliger_factor": 0.419,
+      "solar_incidence_angle_deg": 44.0,
+      "emission_angle_deg": 2.4,
+      "macro_slope_lola_deg": 10.0,
+      "micro_slope_inverted_deg": 8.5,
+      "terrace_access_viable": true,
+      "undercut_distance_m": 0.5,
+      "overhang_detection_status": "OPEN_CHANNEL_NO_OVERHANG",
+      "has_horizontal_conduit_entry": false
+    },
+    "dfsar_radar_sounding": {
+      "l_band_penetration_depth_est_m": 4.5,
+      "differential_l_s_sigma0_db": 1.2,
+      "circular_polarization_ratio_cpr": 0.38,
+      "double_bounce_scattering_power_m_chi": 0.15,
+      "dfsar_radar_signature": "FLAT_BASALTIC_CHANNEL_FLOOR_SCATTERING",
+      "is_subsurface_dielectric_boundary": false
+    },
+    "radar_tomography_carrer_model": {
+      "subsurface_conduit_confirmed": false,
+      "conduit_length_m": 0.0,
+      "conduit_width_m": 48.0,
+      "estimated_roof_thickness_m": 0.0,
+      "tomographic_confidence_pct": 35.0,
+      "conduit_geometry_classification": "OPEN_SINUOUS_RILLE_TRENCH",
+      "scientific_assessment_summary": "Track 1 confirms an open lava channel with vertical 40m walls but zero ceiling roof. Ideal candidate for Track 2 trench-and-cover.",
+      "methodology_citation": "Carrer, Pozzobon, Bruzzone et al. (Nature Astronomy, July 2024); Bhardwaj et al. (2021)."
+    }
+  }
+]

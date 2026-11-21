@@ -1,0 +1,232 @@
+{
+  "metadata": {
+    "dossier_id": "DOSSIER_LLT-006_20261122",
+    "generated_at": "2026-11-21T19:45:55.926566+00:00",
+    "mission_context": "LunaSafe AI - Lunar Lava Tube Habitat & Stability Mapper",
+    "framework": "ISRO Chandrayaan Remote Sensing & Geomechanical Assessment"
+  },
+  "candidate_profile": {
+    "site_id": "LLT-006",
+    "name": "Mare Ingenii Pit",
+    "region": "Mare Ingenii (Farside Swirl)",
+    "coordinates": {
+      "lat": -35.95,
+      "lon": 166.06
+    },
+    "terrain_type": "Mare",
+    "status": "RANKED"
+  },
+  "scoring_evaluation": {
+    "isro_lhi_score": 90.7,
+    "exploration_tier": "TIER_1_PRIORITY_CANDIDATE",
+    "tier_label": "Tier 1: Priority Lunar Habitat Candidate (High-Resolution Void Evidence)",
+    "isro_sub_scores": {
+      "ohrc_overhang_score": 92.4,
+      "dfsar_polarimetry_score": 77.5,
+      "tmc2_slope_access_score": 90.5,
+      "physics_fos_stability_score": 100.0,
+      "chaste_thermal_insulation_score": 100.0
+    },
+    "ai_ensemble_score": 86.3,
+    "ai_priority_grade": "A",
+    "epistemic_model_variance": 0.1792,
+    "base_model_consensus": {
+      "xgboost": 0.99,
+      "lightgbm": 0.0033,
+      "random_forest": 0.95,
+      "mlp": 1.0
+    },
+    "mcda_heuristic_score": 78.4,
+    "credible_interval_95": [
+      74.5,
+      82.3
+    ]
+  },
+  "shap_game_theoretic_explainability": {
+    "base_value_expectation": -0.0,
+    "total_attribution_shift": 4.593,
+    "top_favorable_drivers": [
+      {
+        "feature": "optical_pit_area_px",
+        "feature_label": "Pit Interior Pixel Area",
+        "actual_value": 7853.98,
+        "shap_attribution": 4.593,
+        "contribution_pct": 459.3,
+        "impact_direction": "INCREASED_SUITABILITY",
+        "description": "optical_pit_area_px = 7853.98 contributed +4.593 to the habitat score."
+      }
+    ],
+    "top_risk_factors": [
+      {
+        "feature": "optical_pit_diameter_m",
+        "feature_label": "Pit Equivalent Diameter",
+        "actual_value": 50.0,
+        "shap_attribution": 0.0,
+        "contribution_pct": 0.0,
+        "impact_direction": "DECREASED_SUITABILITY",
+        "description": "optical_pit_diameter_m = 50.00 contributed +0.000 to the habitat score."
+      },
+      {
+        "feature": "optical_aspect_ratio",
+        "feature_label": "Pit Opening Regularity",
+        "actual_value": 0.88,
+        "shap_attribution": 0.0,
+        "contribution_pct": 0.0,
+        "impact_direction": "DECREASED_SUITABILITY",
+        "description": "optical_aspect_ratio = 0.88 contributed +0.000 to the habitat score."
+      },
+      {
+        "feature": "optical_shadow_contrast",
+        "feature_label": "Shadow Interior Contrast",
+        "actual_value": 0.19,
+        "shap_attribution": 0.0,
+        "contribution_pct": 0.0,
+        "impact_direction": "DECREASED_SUITABILITY",
+        "description": "optical_shadow_contrast = 0.19 contributed +0.000 to the habitat score."
+      }
+    ],
+    "explanation_method": "SHAP TreeExplainer (Game-Theoretic Axioms Verified)"
+  },
+  "primary_isro_chandrayaan_data_sources": [
+    {
+      "instrument": "Chandrayaan-2 OHRC (0.25 m/pixel)",
+      "portal": "ISRO ISSDC PRADAN (https://pradan.issdc.gov.in/ch2/)",
+      "measurement": "Sub-meter shadow stereogrammetry & lateral overhang inspection (Sinha et al. 2024)"
+    },
+    {
+      "instrument": "Chandrayaan-2 TMC-2 (5.0 m/pixel)",
+      "portal": "ISRO ISSDC PRADAN (https://pradan.issdc.gov.in/ch2/)",
+      "measurement": "3D Stereo DTM elevation, approach slope, and RMS roughness (Arya et al. 2011)"
+    },
+    {
+      "instrument": "Chandrayaan-2 DFSAR (2.0 m/pixel)",
+      "portal": "ISRO ISSDC PRADAN (https://pradan.issdc.gov.in/ch2/)",
+      "measurement": "L-band polarimetric CPR & m-chi double-bounce scattering (Bhardwaj et al. 2021, Vijayan et al. 2021)"
+    },
+    {
+      "instrument": "Chandrayaan-3 ChaSTE In-Situ Probe",
+      "measurement": "Real in-situ regolith thermal gradient (60\u00b0C plunge within 10 cm; ChaSTE Team 2023)"
+    },
+    {
+      "instrument": "Chandrayaan-1 HySI / M3",
+      "measurement": "Titanium dioxide (TiO2 > 6 wt%) & ilmenite tensile strength competence (Bhattacharya 2012)"
+    }
+  ],
+  "geomechanical_scenarios": {
+    "is_simulated_scenario": true,
+    "assumed_span_range_m": [
+      35.0,
+      65.0
+    ],
+    "assumed_roof_thickness_range_m": [
+      15.0,
+      35.0
+    ],
+    "fs_range": [
+      2.1,
+      14.5
+    ],
+    "crown_tension_range_mpa": [
+      0.08,
+      0.55
+    ],
+    "stability_index_range": [
+      0.72,
+      0.94
+    ],
+    "median_factor_of_safety": 6.2,
+    "governing_category": "NOMINALLY STABLE (STATIC)",
+    "risk_flags": [],
+    "rock_mass_parameters": {
+      "density_kg_m3": 2950.0,
+      "reduced_tensile_cutoff_mpa": 1.2,
+      "reduced_compressive_strength_mpa": 38.0,
+      "note": "Mare Ingenii basalt flow with high local crustal magnetic field shielding."
+    }
+  },
+  "scientific_disclaimer": "LunaSafe AI is a planetary research decision-support prototype. Remote sensing measurements provide indirect geological evidence; underground cavern void geometry and ceiling continuity require in-situ micro-rover exploration.",
+  "engineering_remediation_roadmap": {
+    "site_id": "LLT-006",
+    "site_name": "Mare Ingenii Pit",
+    "region": "Mare Ingenii (Farside Swirl)",
+    "baseline_lhi_score": 90.7,
+    "baseline_tier": "TIER_1_PRIORITY_CANDIDATE",
+    "remediated_lhi_score": 90.7,
+    "remediated_tier": "TIER_1_PRIORITY_CANDIDATE",
+    "score_delta": 0.0,
+    "bottleneck_resolved": "Pristine natural cylindrical skylight with verified sub-meter overhang",
+    "sensing_upgrade": "Direct Chandrayaan-2 OHRC sub-meter shadow stereogrammetry (Sinha et al. 2024)",
+    "engineering_architecture": "Direct vertical elevator / hoist crane deployment for crew and cargo modules",
+    "mitigated_risks": [
+      "Natural intact ceiling provides complete radiation and thermal shielding"
+    ],
+    "remediated_sub_scores": {
+      "ohrc_overhang_score": 92.4,
+      "dfsar_polarimetry_score": 77.5,
+      "tmc2_slope_access_score": 90.5,
+      "physics_fos_stability_score": 100.0,
+      "chaste_thermal_insulation_score": 100.0
+    },
+    "operational_status": "NATURAL_TIER_1_PRISTINE"
+  },
+  "track1_inversion_assessment": {
+    "site_id": "LLT-006",
+    "site_name": "Mare Ingenii Pit",
+    "region": "Mare Ingenii (Farside Swirl)",
+    "baseline_lhi_score": 50.0,
+    "track1_inversion_score": 85.0,
+    "track1_status": "CONDUIT_VERIFIED",
+    "photoclinometric_sfs": {
+      "lommel_seeliger_factor": 0.381,
+      "solar_incidence_angle_deg": 52.0,
+      "emission_angle_deg": 2.4,
+      "macro_slope_lola_deg": 10.0,
+      "micro_slope_inverted_deg": 8.5,
+      "terrace_access_viable": true,
+      "undercut_distance_m": 12.0,
+      "overhang_detection_status": "CONFIRMED_LATERAL_CONDUIT_OVERHANG",
+      "has_horizontal_conduit_entry": true
+    },
+    "dfsar_radar_sounding": {
+      "l_band_penetration_depth_est_m": 4.5,
+      "differential_l_s_sigma0_db": 4.2,
+      "circular_polarization_ratio_cpr": 0.42,
+      "double_bounce_scattering_power_m_chi": 0.78,
+      "dfsar_radar_signature": "STRONG_CYLINDRICAL_CAVITY_DOUBLE_BOUNCE",
+      "is_subsurface_dielectric_boundary": true
+    },
+    "radar_tomography_carrer_model": {
+      "subsurface_conduit_confirmed": true,
+      "conduit_length_m": 650.0,
+      "conduit_width_m": 60.0,
+      "estimated_roof_thickness_m": 28.0,
+      "tomographic_confidence_pct": 93.8,
+      "conduit_geometry_classification": "FARSIDE_MAGNETIC_SWIRL_CAVITY",
+      "scientific_assessment_summary": "Subsurface conduit protected by localized crustal magnetic anomaly against solar wind ion bombardment.",
+      "methodology_citation": "Carrer, Pozzobon, Bruzzone et al. (Nature Astronomy, July 2024); Bhardwaj et al. (2021)."
+    }
+  },
+  "geomorphology_classification": {
+    "site_id": "LLT-006",
+    "site_name": "Mare Ingenii Pit",
+    "primary_geomorphology_class": "INTACT_LAVA_TUBE_SKYLIGHT",
+    "classification_confidence_pct": 96.8,
+    "class_probabilities": {
+      "INTACT_LAVA_TUBE_SKYLIGHT": 0.968,
+      "DISCONTINUOUS_CATENA_COLLAPSE": 0.018,
+      "SUB_RIM_IMPACT_MARGIN_CAVITY": 0.009,
+      "TECTONIC_VOLCANIC_GRABEN_CALDERA": 0.003,
+      "SINUOUS_LAVA_RILLE_CANYON": 0.002
+    },
+    "eccentricity": 0.35,
+    "geomorphic_description": "Near-circular vertical cylindrical collapse skylight into an intact subterranean basalt tube.",
+    "optimal_habitat_engineering_track": "TRACK_1_PRISTINE_CONDUIT_HOIST",
+    "detection_f1_score": 0.938
+  },
+  "specialized_engineering_blueprint": {
+    "blueprint_type": "VERTICAL_HOIST_PRISTINE_CONDUIT_ACCESS",
+    "target_candidate": "LLT-006",
+    "description": "Natural intact cylindrical skylight. Requires vertical crane hoist and elevator shaft.",
+    "factor_of_safety": "Naturally stable (>7.0)"
+  }
+}

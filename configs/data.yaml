@@ -1,0 +1,52 @@
+# LunaSafe AI - Data Configuration
+dataset:
+  name: "LunaSafe-Chandrayaan2-Dataset"
+  version: "1.0.0"
+  study_regions:
+    - name: "Marius Hills"
+      center_lat: 14.09
+      center_lon: -56.72
+      target_type: "confirmed_pit"
+    - name: "Mare Tranquillitatis"
+      center_lat: 8.335
+      center_lon: 33.222
+      target_type: "confirmed_pit_with_conduit"
+    - name: "Mare Ingenii"
+      center_lat: -35.95
+      center_lon: 166.06
+      target_type: "confirmed_pit"
+    - name: "Lacustrine Rille A"
+      center_lat: 24.6
+      center_lon: 20.1
+      target_type: "sinuous_rille_candidate"
+    - name: "Oceanus Procellarum B"
+      center_lat: 18.2
+      center_lon: -48.3
+      target_type: "scarp_depression"
+    - name: "Rima Hyginus"
+      center_lat: 7.8
+      center_lon: 6.3
+      target_type: "volcanic_collapse_caldera"
+
+instruments:
+  ohrc:
+    pixel_scale_m: 0.25
+    spectral_range_nm: [450, 900]
+    format: "GeoTIFF"
+    patch_size: 256
+    overlap: 32
+  tmc2:
+    pixel_scale_m: 5.0
+    vertical_datum: "Lunar Sphere (R=1737.4 km)"
+    elevation_unit: "meters"
+  dfsar:
+    bands: ["L-band", "S-band"]
+    polarizations: ["Full-Pol", "Hybrid-Pol"]
+    pixel_scale_m: 2.0
+    products: ["m-chi", "CPR", "Backscatter_dB"]
+
+splits:
+  strategy: "geographic"
+  train_regions: ["Oceanus Procellarum B", "Lacustrine Rille A"]
+  val_regions: ["Mare Ingenii"]
+  test_regions: ["Marius Hills", "Mare Tranquillitatis"]

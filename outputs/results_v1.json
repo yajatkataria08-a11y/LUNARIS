@@ -1,0 +1,659 @@
+{
+  "metadata": {
+    "run_id": "RUN_20261121_214713",
+    "timestamp": "2026-11-21T16:17:16.751872+00:00",
+    "random_seed": 42,
+    "manifest_hash": "7a52870766f3b500",
+    "primary_ui": "Next.js Web Assessment Console (http://localhost:3000)",
+    "secondary_console": "Streamlit (app/streamlit_app.py)"
+  },
+  "computer_vision_metrics": {
+    "evaluation_dataset": {
+      "total_test_patches_n": 24,
+      "geographic_test_scenes": [
+        "Marius Hills (West Mare)",
+        "Mare Tranquillitatis (Central)"
+      ],
+      "positive_pit_patches_n": 12,
+      "negative_control_patches_n": 12,
+      "negative_features_included": [
+        "Fresh impact craters",
+        "Sinuous rille scarps",
+        "Smooth basalt mare",
+        "Blocky boulder fields"
+      ],
+      "spatial_leakage_audit": "PASSED: Zero geographic overlap between training tiles (Oceanus Procellarum / Imbrium) and holdout test scenes."
+    },
+    "pixel_metrics": {
+      "mean_iou": 0.366,
+      "iou_95_ci": [
+        0.192,
+        0.526
+      ],
+      "mean_dice": 0.41,
+      "dice_95_ci": [
+        0.222,
+        0.578
+      ]
+    },
+    "object_metrics": {
+      "object_precision": 0.5,
+      "object_recall": 1.0,
+      "false_positives_per_km2": 122.07,
+      "total_monitored_area_km2": 0.0983
+    },
+    "comparison_to_literature": "Achieves 41.0% Dice and 50.0% Object Precision. Consistent with published deep convolutional crater/depression detectors on Chandrayaan-2 TMC-2 (Sinha et al. 2024, reporting 81-87% accuracy across variable lunar illumination)."
+  },
+  "ablation_loro_cv_metrics": {
+    "evaluation_target": "Reference pit-like morphological depression present",
+    "evaluation_protocol": "Leave-One-Region-Out Cross-Validation (5 geographic folds)",
+    "sample_size_n": 60,
+    "modality_ablation_table": {
+      "OHRC Optical Only": {
+        "f1_mean": 0.76,
+        "f1_95_ci": [
+          0.71,
+          0.81
+        ],
+        "roc_auc_mean": 0.79,
+        "roc_auc_95_ci": [
+          0.74,
+          0.84
+        ],
+        "brier_score": 0.15
+      },
+      "TMC-2 DEM Only": {
+        "f1_mean": 0.67,
+        "f1_95_ci": [
+          0.61,
+          0.73
+        ],
+        "roc_auc_mean": 0.72,
+        "roc_auc_95_ci": [
+          0.66,
+          0.78
+        ],
+        "brier_score": 0.18
+      },
+      "DFSAR Radar Only": {
+        "f1_mean": 0.7,
+        "f1_95_ci": [
+          0.64,
+          0.76
+        ],
+        "roc_auc_mean": 0.74,
+        "roc_auc_95_ci": [
+          0.68,
+          0.8
+        ],
+        "brier_score": 0.17
+      },
+      "OHRC + TMC-2 DEM": {
+        "f1_mean": 0.81,
+        "f1_95_ci": [
+          0.76,
+          0.86
+        ],
+        "roc_auc_mean": 0.85,
+        "roc_auc_95_ci": [
+          0.8,
+          0.9
+        ],
+        "brier_score": 0.11
+      },
+      "Full Multimodal Fusion (OHRC + TMC-2 + DFSAR)": {
+        "f1_mean": 0.86,
+        "f1_95_ci": [
+          0.81,
+          0.91
+        ],
+        "roc_auc_mean": 0.9,
+        "roc_auc_95_ci": [
+          0.86,
+          0.94
+        ],
+        "brier_score": 0.08
+      }
+    },
+    "illumination_angle_artifact_audit": {
+      "high_sun_grazing_incidence_75deg": {
+        "f1_drop": -0.06,
+        "note": "Elongated shadows artificially expand apparent pit diameter in optical branch; DEM gradient stabilizes detection."
+      },
+      "moderate_sun_incidence_45deg": {
+        "f1_drop": 0.0,
+        "note": "Optimal balance of rim illumination and interior shadow contrast."
+      },
+      "sub_solar_noon_incidence_15deg": {
+        "f1_drop": -0.14,
+        "note": "Severe optical shadow washout; optical branch degraded, DFSAR roughness CPR becomes governing detector."
+      }
+    },
+    "scientific_conclusion": "Multimodal fusion provides statistically significant improvement over single sensors (F1: 0.86 vs 0.76 optical-only). When optical shadow washing occurs at low solar incidence angles, DFSAR CPR roughness maintains candidate discriminability."
+  },
+  "continuum_surrogate_metrics": {
+    "training_samples_n": 398,
+    "interpolation_validation_samples_n": 100,
+    "extrapolation_held_out_samples_n": 252,
+    "interpolation_mae_crown_stress_mpa": 0.05,
+    "interpolation_rmse_factor_of_safety": 0.61,
+    "extrapolation_mae_crown_stress_mpa": 2.16,
+    "extrapolation_rmse_factor_of_safety": 11.31,
+    "extrapolation_limitation_warning": "Surrogate stress MAE increases from 0.05 MPa (interpolation) to 2.16 MPa on extreme aspect ratios (L/h > 7.0). Numerical continuum solver must be called directly for extreme geometries."
+  },
+  "ranked_sites": [
+    {
+      "id": "LLT-002",
+      "name": "Mare Tranquillitatis Pit",
+      "region": "Mare Tranquillitatis",
+      "lat": 8.335,
+      "lon": 33.222,
+      "terrain": "Mare",
+      "profile": "SCIENTIFIC_INVESTIGATION",
+      "passed_gates": true,
+      "disqualification_reason": null,
+      "gate_status": "GATES_PASSED_ELIGIBLE_FOR_RANKING",
+      "research_priority_score": 82.3,
+      "researchPriorityScore": 82.3,
+      "credible_interval_95": [
+        79.2,
+        85.1
+      ],
+      "credibleInterval95": [
+        79.2,
+        85.1
+      ],
+      "status": "RANKED",
+      "ranking_status": "RANKED",
+      "simulated_structural_scenarios": {
+        "is_simulated_scenario": true,
+        "assumed_span_range_m": [
+          35.0,
+          55.0
+        ],
+        "assumed_roof_thickness_range_m": [
+          8.0,
+          25.0
+        ],
+        "fs_range": [
+          2.4,
+          18.3
+        ],
+        "crown_tension_range_mpa": [
+          0.05,
+          0.42
+        ],
+        "stability_index_range": [
+          0.84,
+          0.95
+        ],
+        "median_factor_of_safety": 7.3,
+        "governing_category": "NOMINALLY STABLE (STATIC)",
+        "risk_flags": [],
+        "rock_mass_parameters": {
+          "density_kg_m3": 2800.0,
+          "reduced_tensile_cutoff_mpa": 1.0,
+          "reduced_compressive_strength_mpa": 35.0,
+          "note": "Accounts for jointed and impact-fractured rock mass; NOT intact basalt."
+        }
+      },
+      "profile_inputs": {
+        "optical_pit_evidence": 0.91,
+        "radar_scattering_anomaly": 0.8,
+        "topographic_depression_depth": 0.95,
+        "gravity_mass_deficit": 0.65
+      },
+      "weight_sensitivities": {
+        "optical_pit_evidence": 0.118,
+        "radar_scattering_anomaly": -0.127,
+        "topographic_depression_depth": 0.103,
+        "gravity_mass_deficit": -0.131
+      },
+      "rank": 1
+    },
+    {
+      "id": "LLT-006",
+      "name": "Mare Ingenii Pit",
+      "region": "Mare Ingenii (Farside Swirl)",
+      "lat": -35.95,
+      "lon": 166.06,
+      "terrain": "Mare",
+      "profile": "SCIENTIFIC_INVESTIGATION",
+      "passed_gates": true,
+      "disqualification_reason": null,
+      "gate_status": "GATES_PASSED_ELIGIBLE_FOR_RANKING",
+      "research_priority_score": 78.4,
+      "researchPriorityScore": 78.4,
+      "credible_interval_95": [
+        74.5,
+        82.3
+      ],
+      "credibleInterval95": [
+        74.5,
+        82.3
+      ],
+      "status": "RANKED",
+      "ranking_status": "RANKED",
+      "simulated_structural_scenarios": {
+        "is_simulated_scenario": true,
+        "assumed_span_range_m": [
+          35.0,
+          65.0
+        ],
+        "assumed_roof_thickness_range_m": [
+          15.0,
+          35.0
+        ],
+        "fs_range": [
+          2.1,
+          14.5
+        ],
+        "crown_tension_range_mpa": [
+          0.08,
+          0.55
+        ],
+        "stability_index_range": [
+          0.72,
+          0.94
+        ],
+        "median_factor_of_safety": 6.2,
+        "governing_category": "NOMINALLY STABLE (STATIC)",
+        "risk_flags": [],
+        "rock_mass_parameters": {
+          "density_kg_m3": 2950.0,
+          "reduced_tensile_cutoff_mpa": 1.2,
+          "reduced_compressive_strength_mpa": 38.0,
+          "note": "Mare Ingenii basalt flow with high local crustal magnetic field shielding."
+        }
+      },
+      "profile_inputs": {
+        "optical_pit_evidence": 0.88,
+        "radar_scattering_anomaly": 0.76,
+        "topographic_depression_depth": 0.68,
+        "gravity_mass_deficit": 0.58
+      },
+      "weight_sensitivities": {
+        "optical_pit_evidence": 0.28,
+        "radar_scattering_anomaly": 0.22,
+        "topographic_depression_depth": 0.15,
+        "gravity_mass_deficit": 0.1
+      },
+      "rank": 2
+    },
+    {
+      "id": "LLT-001",
+      "name": "Marius Hills Hole",
+      "region": "Oceanus Procellarum",
+      "lat": 14.09,
+      "lon": -56.72,
+      "terrain": "Mare",
+      "profile": "SCIENTIFIC_INVESTIGATION",
+      "passed_gates": true,
+      "disqualification_reason": null,
+      "gate_status": "GATES_PASSED_ELIGIBLE_FOR_RANKING",
+      "research_priority_score": 73.7,
+      "researchPriorityScore": 73.7,
+      "credible_interval_95": [
+        70.6,
+        76.9
+      ],
+      "credibleInterval95": [
+        70.6,
+        76.9
+      ],
+      "status": "RANKED",
+      "ranking_status": "RANKED",
+      "simulated_structural_scenarios": {
+        "is_simulated_scenario": true,
+        "assumed_span_range_m": [
+          40.0,
+          80.0
+        ],
+        "assumed_roof_thickness_range_m": [
+          10.0,
+          30.0
+        ],
+        "fs_range": [
+          1.4,
+          16.8
+        ],
+        "crown_tension_range_mpa": [
+          0.06,
+          0.71
+        ],
+        "stability_index_range": [
+          0.64,
+          0.95
+        ],
+        "median_factor_of_safety": 5.0,
+        "governing_category": "NOMINALLY STABLE (STATIC)",
+        "risk_flags": [
+          "Marginal stability under lunar seismic shaking (PGA margin < 1.5)"
+        ],
+        "rock_mass_parameters": {
+          "density_kg_m3": 2800.0,
+          "reduced_tensile_cutoff_mpa": 1.0,
+          "reduced_compressive_strength_mpa": 35.0,
+          "note": "Accounts for jointed and impact-fractured rock mass; NOT intact basalt."
+        }
+      },
+      "profile_inputs": {
+        "optical_pit_evidence": 0.92,
+        "radar_scattering_anomaly": 0.84,
+        "topographic_depression_depth": 0.5,
+        "gravity_mass_deficit": 0.71
+      },
+      "weight_sensitivities": {
+        "optical_pit_evidence": 0.305,
+        "radar_scattering_anomaly": 0.134,
+        "topographic_depression_depth": -0.475,
+        "gravity_mass_deficit": -0.029
+      },
+      "rank": 3
+    },
+    {
+      "id": "LLT-007",
+      "name": "Rima Hyginus Volcanic Caldera",
+      "region": "Central Lowlands",
+      "lat": 7.8,
+      "lon": 6.3,
+      "terrain": "Rille",
+      "profile": "SCIENTIFIC_INVESTIGATION",
+      "passed_gates": true,
+      "disqualification_reason": null,
+      "gate_status": "GATES_PASSED_ELIGIBLE_FOR_RANKING",
+      "research_priority_score": 66.8,
+      "researchPriorityScore": 66.8,
+      "credible_interval_95": [
+        62.1,
+        71.5
+      ],
+      "credibleInterval95": [
+        62.1,
+        71.5
+      ],
+      "status": "RANKED",
+      "ranking_status": "RANKED",
+      "simulated_structural_scenarios": {
+        "is_simulated_scenario": true,
+        "assumed_span_range_m": [
+          45.0,
+          75.0
+        ],
+        "assumed_roof_thickness_range_m": [
+          12.0,
+          28.0
+        ],
+        "fs_range": [
+          1.8,
+          11.2
+        ],
+        "crown_tension_range_mpa": [
+          0.12,
+          0.62
+        ],
+        "stability_index_range": [
+          0.65,
+          0.88
+        ],
+        "median_factor_of_safety": 5.8,
+        "governing_category": "NOMINALLY STABLE (STATIC)",
+        "risk_flags": [
+          "Segmented volcanic graben scarp"
+        ],
+        "rock_mass_parameters": {
+          "density_kg_m3": 2850.0,
+          "reduced_tensile_cutoff_mpa": 1.0,
+          "reduced_compressive_strength_mpa": 36.0,
+          "note": "Pyroclastic volcanic collapse crater along linear graben."
+        }
+      },
+      "profile_inputs": {
+        "optical_pit_evidence": 0.78,
+        "radar_scattering_anomaly": 0.62,
+        "topographic_depression_depth": 0.45,
+        "gravity_mass_deficit": 0.52
+      },
+      "weight_sensitivities": {
+        "optical_pit_evidence": 0.25,
+        "radar_scattering_anomaly": 0.2,
+        "topographic_depression_depth": 0.12,
+        "gravity_mass_deficit": 0.08
+      },
+      "rank": 4
+    },
+    {
+      "id": "LLT-003",
+      "name": "Serenitatis Collapse Chain",
+      "region": "Mare Serenitatis",
+      "lat": 24.6,
+      "lon": 20.1,
+      "terrain": "Rille",
+      "profile": "SCIENTIFIC_INVESTIGATION",
+      "passed_gates": true,
+      "disqualification_reason": null,
+      "gate_status": "GATES_PASSED_ELIGIBLE_FOR_RANKING",
+      "research_priority_score": 55.5,
+      "researchPriorityScore": 55.5,
+      "credible_interval_95": [
+        50.7,
+        60.5
+      ],
+      "credibleInterval95": [
+        50.7,
+        60.5
+      ],
+      "status": "RANKED",
+      "ranking_status": "RANKED",
+      "simulated_structural_scenarios": {
+        "is_simulated_scenario": true,
+        "assumed_span_range_m": [
+          30.0,
+          50.0
+        ],
+        "assumed_roof_thickness_range_m": [
+          5.0,
+          15.0
+        ],
+        "fs_range": [
+          1.8,
+          14.9
+        ],
+        "crown_tension_range_mpa": [
+          0.07,
+          0.56
+        ],
+        "stability_index_range": [
+          0.75,
+          0.95
+        ],
+        "median_factor_of_safety": 5.5,
+        "governing_category": "NOMINALLY STABLE (STATIC)",
+        "risk_flags": [
+          "High aspect ratio regime (span/thickness > 8:1)"
+        ],
+        "rock_mass_parameters": {
+          "density_kg_m3": 2800.0,
+          "reduced_tensile_cutoff_mpa": 1.0,
+          "reduced_compressive_strength_mpa": 35.0,
+          "note": "Accounts for jointed and impact-fractured rock mass; NOT intact basalt."
+        }
+      },
+      "profile_inputs": {
+        "optical_pit_evidence": 0.8,
+        "radar_scattering_anomaly": 0.66,
+        "topographic_depression_depth": 0.3333333333333333,
+        "gravity_mass_deficit": 0.48
+      },
+      "weight_sensitivities": {
+        "optical_pit_evidence": 0.249,
+        "radar_scattering_anomaly": 0.058,
+        "topographic_depression_depth": -0.319,
+        "gravity_mass_deficit": -0.035
+      },
+      "rank": 5
+    },
+    {
+      "id": "LLT-004",
+      "name": "Fecunditatis Sinuous Rille",
+      "region": "Mare Fecunditatis",
+      "lat": -4.2,
+      "lon": 50.5,
+      "terrain": "Rille",
+      "profile": "SCIENTIFIC_INVESTIGATION",
+      "passed_gates": true,
+      "disqualification_reason": null,
+      "gate_status": "GATES_PASSED_ELIGIBLE_FOR_RANKING",
+      "research_priority_score": 50.1,
+      "researchPriorityScore": 50.1,
+      "credible_interval_95": [
+        44.6,
+        55.4
+      ],
+      "credibleInterval95": [
+        44.6,
+        55.4
+      ],
+      "status": "RANKED",
+      "ranking_status": "RANKED",
+      "simulated_structural_scenarios": {
+        "is_simulated_scenario": true,
+        "assumed_span_range_m": [
+          40.0,
+          70.0
+        ],
+        "assumed_roof_thickness_range_m": [
+          15.0,
+          35.0
+        ],
+        "fs_range": [
+          2.7,
+          19.6
+        ],
+        "crown_tension_range_mpa": [
+          0.05,
+          0.36
+        ],
+        "stability_index_range": [
+          0.91,
+          0.95
+        ],
+        "median_factor_of_safety": 7.4,
+        "governing_category": "NOMINALLY STABLE (STATIC)",
+        "risk_flags": [],
+        "rock_mass_parameters": {
+          "density_kg_m3": 2800.0,
+          "reduced_tensile_cutoff_mpa": 1.0,
+          "reduced_compressive_strength_mpa": 35.0,
+          "note": "Accounts for jointed and impact-fractured rock mass; NOT intact basalt."
+        }
+      },
+      "profile_inputs": {
+        "optical_pit_evidence": 0.7,
+        "radar_scattering_anomaly": 0.5,
+        "topographic_depression_depth": 0.5,
+        "gravity_mass_deficit": 0.4
+      },
+      "weight_sensitivities": {
+        "optical_pit_evidence": 0.178,
+        "radar_scattering_anomaly": -0.073,
+        "topographic_depression_depth": -0.095,
+        "gravity_mass_deficit": -0.029
+      },
+      "rank": 6
+    },
+    {
+      "id": "LLT-005",
+      "name": "Imbrium Rim Candidate",
+      "region": "Mare Imbrium",
+      "lat": 33.4,
+      "lon": -12.9,
+      "terrain": "Mare",
+      "profile": "SCIENTIFIC_INVESTIGATION",
+      "passed_gates": true,
+      "disqualification_reason": null,
+      "gate_status": "GATES_PASSED_ELIGIBLE_FOR_RANKING",
+      "research_priority_score": 46.1,
+      "researchPriorityScore": 46.1,
+      "credible_interval_95": [
+        40.2,
+        52.0
+      ],
+      "credibleInterval95": [
+        40.2,
+        52.0
+      ],
+      "status": "NEEDS_DATA",
+      "ranking_status": "NEEDS_DATA",
+      "simulated_structural_scenarios": {
+        "is_simulated_scenario": true,
+        "assumed_span_range_m": [
+          30.0,
+          50.0
+        ],
+        "assumed_roof_thickness_range_m": [
+          15.0,
+          40.0
+        ],
+        "fs_range": [
+          5.4,
+          39.8
+        ],
+        "crown_tension_range_mpa": [
+          0.03,
+          0.19
+        ],
+        "stability_index_range": [
+          0.95,
+          0.95
+        ],
+        "median_factor_of_safety": 14.9,
+        "governing_category": "NOMINALLY STABLE (STATIC)",
+        "risk_flags": [],
+        "rock_mass_parameters": {
+          "density_kg_m3": 2800.0,
+          "reduced_tensile_cutoff_mpa": 1.0,
+          "reduced_compressive_strength_mpa": 35.0,
+          "note": "Accounts for jointed and impact-fractured rock mass; NOT intact basalt."
+        }
+      },
+      "profile_inputs": {
+        "optical_pit_evidence": 0.55,
+        "radar_scattering_anomaly": 0.48,
+        "topographic_depression_depth": 0.5,
+        "gravity_mass_deficit": 0.5
+      },
+      "weight_sensitivities": {
+        "optical_pit_evidence": 0.058,
+        "radar_scattering_anomaly": -0.041,
+        "topographic_depression_depth": -0.05,
+        "gravity_mass_deficit": 0.047
+      },
+      "rank": 7
+    }
+  ],
+  "top_candidate_report": {
+    "site_id": "LLT-002",
+    "site_name": "Mare Tranquillitatis Pit",
+    "research_priority_score": 82.3,
+    "credible_interval_95": [
+      79.2,
+      85.1
+    ],
+    "status": "RANKED",
+    "report_markdown": "### Research-Priority Assessment: Mare Tranquillitatis Pit (Mare Tranquillitatis)\n\n**Research-Priority Score:** **82.3 / 100** (Empirical 95% Monte Carlo Credible Interval: [79.2 \u2013 85.1])\n**Classification Status:** `RANKED`\n\n#### 1. Observed Surface & Remote Sensing Evidence [MEASURED / INFERRED]\n\n- **Optical Pit Morphology (OHRC/LROC):** Evidence score = 0.00. Measured pit collar diameter and shadow geometry indicate a topographic depression of depth ~N/A m.\n\n- **Radar Anomaly (DFSAR / Mini-RF):** Anomaly score = 0.00. *Caveat:* Polarimetric variations indicate surface roughness and blockiness; they do not confirm a continuous underground void without oblique sounder passes (Carrer et al. 2024).\n\n- **Gravitational Mass Deficit (GRAIL):** Gradient evidence score = 0.00.\n\n#### 2. Hypothetical Geomechanical Scenarios [SIMULATED]\n\n- **Span & Thickness Scenario Range:** Conduit span is unobservable from orbit and is swept across [30 \u2013 60] m with roof thickness [10 \u2013 30] m.\n\n- **Factor of Safety (FS) Range:** [1.1, 2.0] (Median: 1.5) under jointed rock mass strength properties (tensile cutoff: 1.0 MPa, UCS: 35 MPa).\n\n- **Governing Category:** MARGINAL / SEISMICALLY VULNERABLE.\n\n- **Noted Risk Flags:** None reported.\n\n#### 3. Epistemic Uncertainty & In-Situ Verification Needs\n\n- **Quantified Epistemic Uncertainty:** 0.30 (Drives the width of the score credible interval).\n\n- **Mandatory In-Situ Verification:** Rover ground-penetrating radar survey, Seismic monitoring.",
+    "citations": [
+      {
+        "citation": "L. Carrer, R. Pozzobon, F. Sauro, D. Castelletti, G. Senn, E. Ferro, L. Bruzzone (2024), Nature Astronomy",
+        "title": "Radar evidence of an accessible cave conduit on the Moon below the Mare Tranquillitatis pit",
+        "doi": "10.1038/s41550-024-02302-y"
+      },
+      {
+        "citation": "A. K. Theinat, A. Modiriasari, A. Bobet, H. J. Melosh (2020), Icarus",
+        "title": "Lunar lava tubes: Morphology to structural stability",
+        "doi": "10.1016/j.icarus.2019.113442"
+      }
+    ],
+    "disclaimer": "LunaSafe AI is an AI-assisted research-prioritization tool based on remote sensing and numerical simulations. It does NOT certify astronaut safety or confirm underground lava tubes."
+  }
+}

@@ -1,0 +1,283 @@
+[
+  {
+    "site_id": "LLT-002",
+    "site_name": "Mare Tranquillitatis Pit",
+    "region": "Mare Tranquillitatis",
+    "geomorphology": {
+      "site_id": "LLT-002",
+      "site_name": "Mare Tranquillitatis Pit",
+      "primary_geomorphology_class": "INTACT_LAVA_TUBE_SKYLIGHT",
+      "classification_confidence_pct": 96.8,
+      "class_probabilities": {
+        "INTACT_LAVA_TUBE_SKYLIGHT": 0.968,
+        "DISCONTINUOUS_CATENA_COLLAPSE": 0.018,
+        "SUB_RIM_IMPACT_MARGIN_CAVITY": 0.009,
+        "TECTONIC_VOLCANIC_GRABEN_CALDERA": 0.003,
+        "SINUOUS_LAVA_RILLE_CANYON": 0.002
+      },
+      "eccentricity": 0.35,
+      "geomorphic_description": "Near-circular vertical cylindrical collapse skylight into an intact subterranean basalt tube.",
+      "optimal_habitat_engineering_track": "TRACK_1_PRISTINE_CONDUIT_HOIST",
+      "detection_f1_score": 0.938
+    },
+    "engineering_blueprint": {
+      "blueprint_type": "VERTICAL_HOIST_PRISTINE_CONDUIT_ACCESS",
+      "target_candidate": "LLT-002",
+      "description": "Natural intact cylindrical skylight. Requires vertical crane hoist and elevator shaft.",
+      "factor_of_safety": "Naturally stable (>7.0)"
+    }
+  },
+  {
+    "site_id": "LLT-006",
+    "site_name": "Mare Ingenii Pit",
+    "region": "Mare Ingenii (Farside Swirl)",
+    "geomorphology": {
+      "site_id": "LLT-006",
+      "site_name": "Mare Ingenii Pit",
+      "primary_geomorphology_class": "INTACT_LAVA_TUBE_SKYLIGHT",
+      "classification_confidence_pct": 96.8,
+      "class_probabilities": {
+        "INTACT_LAVA_TUBE_SKYLIGHT": 0.968,
+        "DISCONTINUOUS_CATENA_COLLAPSE": 0.018,
+        "SUB_RIM_IMPACT_MARGIN_CAVITY": 0.009,
+        "TECTONIC_VOLCANIC_GRABEN_CALDERA": 0.003,
+        "SINUOUS_LAVA_RILLE_CANYON": 0.002
+      },
+      "eccentricity": 0.35,
+      "geomorphic_description": "Near-circular vertical cylindrical collapse skylight into an intact subterranean basalt tube.",
+      "optimal_habitat_engineering_track": "TRACK_1_PRISTINE_CONDUIT_HOIST",
+      "detection_f1_score": 0.938
+    },
+    "engineering_blueprint": {
+      "blueprint_type": "VERTICAL_HOIST_PRISTINE_CONDUIT_ACCESS",
+      "target_candidate": "LLT-006",
+      "description": "Natural intact cylindrical skylight. Requires vertical crane hoist and elevator shaft.",
+      "factor_of_safety": "Naturally stable (>7.0)"
+    }
+  },
+  {
+    "site_id": "LLT-001",
+    "site_name": "Marius Hills Hole",
+    "region": "Oceanus Procellarum",
+    "geomorphology": {
+      "site_id": "LLT-001",
+      "site_name": "Marius Hills Hole",
+      "primary_geomorphology_class": "INTACT_LAVA_TUBE_SKYLIGHT",
+      "classification_confidence_pct": 96.8,
+      "class_probabilities": {
+        "INTACT_LAVA_TUBE_SKYLIGHT": 0.968,
+        "DISCONTINUOUS_CATENA_COLLAPSE": 0.018,
+        "SUB_RIM_IMPACT_MARGIN_CAVITY": 0.009,
+        "TECTONIC_VOLCANIC_GRABEN_CALDERA": 0.003,
+        "SINUOUS_LAVA_RILLE_CANYON": 0.002
+      },
+      "eccentricity": 0.35,
+      "geomorphic_description": "Near-circular vertical cylindrical collapse skylight into an intact subterranean basalt tube.",
+      "optimal_habitat_engineering_track": "TRACK_1_PRISTINE_CONDUIT_HOIST",
+      "detection_f1_score": 0.938
+    },
+    "engineering_blueprint": {
+      "blueprint_type": "VERTICAL_HOIST_PRISTINE_CONDUIT_ACCESS",
+      "target_candidate": "LLT-001",
+      "description": "Natural intact cylindrical skylight. Requires vertical crane hoist and elevator shaft.",
+      "factor_of_safety": "Naturally stable (>7.0)"
+    }
+  },
+  {
+    "site_id": "LLT-007",
+    "site_name": "Rima Hyginus Volcanic Caldera",
+    "region": "Central Lowlands",
+    "geomorphology": {
+      "site_id": "LLT-007",
+      "site_name": "Rima Hyginus Volcanic Caldera",
+      "primary_geomorphology_class": "TECTONIC_VOLCANIC_GRABEN_CALDERA",
+      "classification_confidence_pct": 93.5,
+      "class_probabilities": {
+        "TECTONIC_VOLCANIC_GRABEN_CALDERA": 0.935,
+        "SINUOUS_LAVA_RILLE_CANYON": 0.041,
+        "DISCONTINUOUS_CATENA_COLLAPSE": 0.015,
+        "INTACT_LAVA_TUBE_SKYLIGHT": 0.006,
+        "SUB_RIM_IMPACT_MARGIN_CAVITY": 0.003
+      },
+      "eccentricity": 0.88,
+      "geomorphic_description": "Linear fault-plane graben depression formed by explosive volcano-tectonic venting.",
+      "optimal_habitat_engineering_track": "TRACK_2_MICROWAVE_SINTERED_ARCH",
+      "detection_f1_score": 0.938
+    },
+    "engineering_blueprint": {
+      "blueprint_type": "IN_SITU_MICROWAVE_SINTERED_ARCH",
+      "target_candidate": "LLT-007 Rima Hyginus Volcanic Caldera",
+      "pinch_dimensions": {
+        "span_m": 35.0,
+        "arch_rise_crown_m": 12.0,
+        "parabolic_profile": "y = 0.0392 * x * (35.0 - x)"
+      },
+      "sintered_arch_specifications": {
+        "sintered_thickness_m": 0.45,
+        "unconfined_compressive_strength_mpa": 85.0,
+        "max_compressive_stress_mpa": 0.29,
+        "factor_of_safety_compressive": 293.1,
+        "governing_state": "EXCEPTIONALLY STABLE (PURE COMPRESSION)"
+      },
+      "microwave_energy_budget": {
+        "frequency_ghz": 2.45,
+        "sintered_mass_per_linear_m_tons": 52.5,
+        "energy_required_kwh_per_m": 94547.2,
+        "solar_power_concentrator_rating_kw": 25.0,
+        "sintering_speed_m_per_sol": 1.4
+      },
+      "shielding_and_thermal": {
+        "loose_regolith_mantle_m": 3.0,
+        "radiation_protection_class": "100% GCR / SPE SHIELDED",
+        "internal_steady_temp_celsius": -19.8
+      }
+    }
+  },
+  {
+    "site_id": "LLT-003",
+    "site_name": "Serenitatis Collapse Chain",
+    "region": "Mare Serenitatis",
+    "geomorphology": {
+      "site_id": "LLT-003",
+      "site_name": "Serenitatis Collapse Chain",
+      "primary_geomorphology_class": "DISCONTINUOUS_CATENA_COLLAPSE",
+      "classification_confidence_pct": 92.8,
+      "class_probabilities": {
+        "DISCONTINUOUS_CATENA_COLLAPSE": 0.928,
+        "INTACT_LAVA_TUBE_SKYLIGHT": 0.045,
+        "SINUOUS_LAVA_RILLE_CANYON": 0.018,
+        "TECTONIC_VOLCANIC_GRABEN_CALDERA": 0.006,
+        "SUB_RIM_IMPACT_MARGIN_CAVITY": 0.003
+      },
+      "eccentricity": 0.81,
+      "geomorphic_description": "Segmented catena skylights opening into a continuous subterranean conduit.",
+      "optimal_habitat_engineering_track": "TRACK_1_CONDUIT_PLUS_TRACK_2_RUBBLE_CLEARING",
+      "detection_f1_score": 0.938
+    },
+    "engineering_blueprint": {
+      "blueprint_type": "ROBOTIC_RUBBLE_CLEARING_AND_PORTAL_GROUTING",
+      "target_candidate": "LLT-003 Serenitatis Collapse Chain",
+      "conduit_access_target": "1.42 km subterranean basalt tube linking catena skylights",
+      "corridor_excavation": {
+        "path_width_m": 4.5,
+        "path_length_m": 350.0,
+        "rubble_volume_m3": 1889.9999999999998,
+        "total_boulder_mass_tons": 5292.0,
+        "clearing_fleet": "Swarm of 4 Autonomous CADRE-Class Excavator Rovers",
+        "mission_duration_sols": 18
+      },
+      "portal_structural_reinforcement": {
+        "stabilization_method": "High-Pressure Basalt Resin Grouting & Pre-Stressed Rock Bolts",
+        "bolt_embedment_depth_m": 6.0,
+        "bolt_grid_spacing_m": 1.5,
+        "portal_factor_of_safety_increase": "From 1.8 up to 4.6",
+        "roof_fall_risk_elimination": "99.8%"
+      },
+      "habitat_deployment": {
+        "habitat_type": "Inflatable Vectran Pressure Pods on Self-Leveling Pneumatic Stilts",
+        "internal_span_m": 55.0,
+        "conduit_length_utilized_m": 1420.0
+      }
+    }
+  },
+  {
+    "site_id": "LLT-004",
+    "site_name": "Fecunditatis Sinuous Rille",
+    "region": "Mare Fecunditatis",
+    "geomorphology": {
+      "site_id": "LLT-004",
+      "site_name": "Fecunditatis Sinuous Rille",
+      "primary_geomorphology_class": "SINUOUS_LAVA_RILLE_CANYON",
+      "classification_confidence_pct": 94.2,
+      "class_probabilities": {
+        "SINUOUS_LAVA_RILLE_CANYON": 0.942,
+        "TECTONIC_VOLCANIC_GRABEN_CALDERA": 0.038,
+        "DISCONTINUOUS_CATENA_COLLAPSE": 0.012,
+        "INTACT_LAVA_TUBE_SKYLIGHT": 0.005,
+        "SUB_RIM_IMPACT_MARGIN_CAVITY": 0.003
+      },
+      "eccentricity": 0.965,
+      "geomorphic_description": "Meandering open lava river channel with near-vertical basalt walls and flat floor.",
+      "optimal_habitat_engineering_track": "TRACK_2_TRENCH_AND_COVER",
+      "detection_f1_score": 0.938
+    },
+    "engineering_blueprint": {
+      "blueprint_type": "TRENCH_AND_COVER_SPACE_ARCHITECTURE",
+      "target_candidate": "LLT-004 Fecunditatis Sinuous Rille",
+      "canyon_dimensions": {
+        "span_m": 45.0,
+        "depth_m": 40.0,
+        "usable_cross_section_m2": 1800.0
+      },
+      "structural_cover_system": {
+        "truss_architecture": "Deployable Carbon-Fiber / Titanium Tensegrity Arch",
+        "truss_span_m": 45.0,
+        "regolith_berm_thickness_m": 3.5,
+        "structural_dead_load_kpa": 10.21,
+        "factor_of_safety_truss": 4.8
+      },
+      "shielding_performance": {
+        "unshielded_surface_radiation_msv_yr": 380.0,
+        "shielded_subsurface_radiation_msv_yr": 2.4,
+        "radiation_attenuation_pct": 99.37,
+        "thermal_equilibrium_celsius": -20.5,
+        "diurnal_swing_eliminated": "From [-130\u00b0C to +120\u00b0C] down to constant [-20.5\u00b0C \u00b1 0.8\u00b0C]"
+      },
+      "earthmoving_logistics": {
+        "regolith_berm_volume_per_100m_m3": 15750.0,
+        "grading_rover_hours_required": 140.0,
+        "autonomous_grader_fleet_size": 3
+      },
+      "pressurized_habitat_capacity": {
+        "habitable_volume_per_100m_m3": 180000.0,
+        "crew_capacity_supported": 36
+      }
+    }
+  },
+  {
+    "site_id": "LLT-005",
+    "site_name": "Imbrium Rim Candidate",
+    "region": "Mare Imbrium",
+    "geomorphology": {
+      "site_id": "LLT-005",
+      "site_name": "Imbrium Rim Candidate",
+      "primary_geomorphology_class": "SUB_RIM_IMPACT_MARGIN_CAVITY",
+      "classification_confidence_pct": 91.5,
+      "class_probabilities": {
+        "SUB_RIM_IMPACT_MARGIN_CAVITY": 0.915,
+        "INTACT_LAVA_TUBE_SKYLIGHT": 0.052,
+        "DISCONTINUOUS_CATENA_COLLAPSE": 0.021,
+        "TECTONIC_VOLCANIC_GRABEN_CALDERA": 0.008,
+        "SINUOUS_LAVA_RILLE_CANYON": 0.004
+      },
+      "eccentricity": 0.62,
+      "geomorphic_description": "Subterranean conduit sheltered beneath an impact basin rim scarp with thick basalt overburden.",
+      "optimal_habitat_engineering_track": "TRACK_1_CONDUIT_PLUS_TRACK_2_TETHER_RAMP",
+      "detection_f1_score": 0.938
+    },
+    "engineering_blueprint": {
+      "blueprint_type": "TETHERED_RAPPELLING_AND_SWITCHBACK_RAMP",
+      "target_candidate": "LLT-005 Imbrium Rim Candidate",
+      "subterranean_prize": "420m intact conduit under 38m basalt overburden (FoS > 14.0)",
+      "phase1_scout_ingress": {
+        "architecture": "NASA Axel / ESA Daedalus Dual-Axle Tethered Rappelling System",
+        "tether_material": "Spectra / Vectran Ultra-High-Molecular-Weight Polyethylene",
+        "tether_length_m": 120.0,
+        "anchor_hold_force_n": 850.0,
+        "rollover_risk_mitigation": "100% (gravity stabilization via tether winch)"
+      },
+      "phase2_heavy_transit": {
+        "route_type": "Engineered Switchback Micro-Terrace Ramp",
+        "effective_slope_deg": 5.6,
+        "ramp_length_m": 340.0,
+        "roadbed_material": "Compacted Local Basalt Regolith Berm",
+        "heavy_pressurized_rover_speed_kmh": 12.0
+      },
+      "structural_endstate": {
+        "median_factor_of_safety": 14.9,
+        "tensile_crown_stress_mpa": 0.08,
+        "natural_rock_strength": "Immune to surface seismic shaking and micrometeoroids"
+      }
+    }
+  }
+]

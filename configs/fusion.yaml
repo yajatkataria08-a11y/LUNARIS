@@ -1,0 +1,25 @@
+# LunaSafe AI - Multimodal Late Fusion & MCDA Ranking Configuration
+fusion:
+  strategy: "staged_late_fusion"
+  modality_weights:
+    ohrc_segmentation: 0.35
+    tmc2_terrain_anomaly: 0.25
+    dfsar_radar_anomaly: 0.25
+    geological_context: 0.15
+  calibration: "isotonic"
+  uncertainty_propagation: "monte_carlo_dropout_and_ensemble"
+
+ranking_mcda:
+  weights:
+    roof_stability: 0.30
+    subsurface_volume_and_span: 0.20
+    surface_access_slope: 0.15
+    radar_evidence_clarity: 0.15
+    optical_skylight_confidence: 0.10
+    thermal_and_radiation_shielding: 0.10
+  uncertainty_penalty_lambda: 0.35
+  status_thresholds:
+    priority_candidate: 75.0
+    candidate: 55.0
+    needs_data_uncertainty: 0.40
+    unstable_stability_max: 0.45
