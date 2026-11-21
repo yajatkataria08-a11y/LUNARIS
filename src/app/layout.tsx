@@ -53,11 +53,11 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <AuthProvider>
-          {/* Ambient Cosmic Mesh Nebulae (GPU Accelerated) */}
-          <div className="pointer-events-none fixed inset-0 overflow-hidden z-0">
-            <div className="absolute -top-32 left-1/4 size-[600px] rounded-full bg-[#DDD6FE]/35 dark:bg-[#1E2761]/35 blur-[120px] animate-nebula transform-gpu" />
-            <div className="absolute top-1/3 -right-20 size-[500px] rounded-full bg-[#DDD6FE]/25 dark:bg-[#5C1D42]/25 blur-[130px] animate-nebula transform-gpu" style={{ animationDelay: "-5s" }} />
-            <div className="absolute -bottom-20 left-10 size-[550px] rounded-full bg-[#3B82F6]/10 dark:bg-[#2E4A9E]/20 blur-[140px] animate-nebula transform-gpu" style={{ animationDelay: "-10s" }} />
+          {/* Ambient Cosmic Mesh Nebulae (Hardware Optimized, Static Layers for Zero Scroll Lag) */}
+          <div className="pointer-events-none fixed inset-0 overflow-hidden z-0 opacity-40 dark:opacity-60">
+            <div className="absolute -top-32 left-1/4 size-[500px] rounded-full bg-[#DDD6FE]/30 dark:bg-[#1E2761]/30 blur-[80px]" />
+            <div className="absolute top-1/3 -right-20 size-[450px] rounded-full bg-[#DDD6FE]/20 dark:bg-[#5C1D42]/20 blur-[90px]" />
+            <div className="absolute -bottom-20 left-10 size-[450px] rounded-full bg-[#3B82F6]/10 dark:bg-[#2E4A9E]/15 blur-[90px]" />
           </div>
 
           {/* Real-time Dynamic Starfield with Glowing Twinkles & Random Shooting Stars */}

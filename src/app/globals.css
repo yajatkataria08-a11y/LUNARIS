@@ -501,16 +501,18 @@ html.jungo .glass-royal-deck {
 html.urja {
   --background: 40 33% 97%; /* #FAF8F5 Starlight Alabaster */
   --foreground: 228 43% 12%; /* #11162B Deep Void Indigo */
-  --card: 43 35% 91%; /* #F0ECE1 Celestial Parchment */
+  --card: 43 35% 94%; /* #F6F3EB Celestial Parchment */
   --card-foreground: 228 43% 12%;
   --primary: 227 49% 23%; /* #1E2B58 Imperial Navy */
   --primary-foreground: 40 33% 98%;
   --secondary: 43 35% 91%; /* #F0ECE1 */
   --secondary-foreground: 228 43% 12%;
+  --muted: 43 25% 92%; /* #EAE5D9 Soft Parchment */
   --muted-foreground: 223 17% 35%; /* #4A5268 Nebula Slate */
   --accent: 256 30% 42%; /* #5B4B8A Astral Amethyst */
   --accent-foreground: 40 33% 98%;
   --border: 41 23% 83%; /* #DFD8C8 Gilded Mist */
+  --input: 41 23% 83%;
   --ring: 43 67% 46%; /* #C59B27 Astrolabe Gold */
 }
 

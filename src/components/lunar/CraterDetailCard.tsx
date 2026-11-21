@@ -191,14 +191,14 @@ export function CraterDetailCard({
       <div
         className={`rounded-2xl border p-4 transition-all relative overflow-hidden ${
           assessment.isCandidate && assessment.score > 0
-            ? "border-emerald-500/50 bg-gradient-to-br from-emerald-950/40 via-slate-900/60 to-slate-950/80 shadow-lg shadow-emerald-950/30"
-            : "border-slate-800 bg-slate-900/50"
+            ? "border-emerald-500/50 bg-gradient-to-br from-emerald-500/10 via-card to-card dark:from-emerald-950/40 dark:via-slate-900/60 dark:to-slate-950/80 shadow-lg shadow-emerald-950/10 dark:shadow-emerald-950/30"
+            : "border-border dark:border-slate-800 bg-muted/40 dark:bg-slate-900/50"
         }`}
       >
         <div className="flex items-start justify-between gap-2 mb-2">
           <div className="space-y-0.5">
             <span className="text-[10px] font-mono font-bold tracking-wider uppercase text-muted-foreground flex items-center gap-1.5">
-              <Activity className="size-3 text-amber-400" />
+              <Activity className="size-3 text-amber-500 dark:text-amber-400" />
               ML Research-Priority Score (out of 100)
             </span>
             <span className="text-[11px] font-mono text-muted-foreground">
@@ -211,8 +211,8 @@ export function CraterDetailCard({
           <span
             className={`text-[9px] font-mono font-bold px-2 py-0.5 rounded-full border flex items-center gap-1 ${
               assessment.isCandidate && assessment.score > 0
-                ? "bg-emerald-500/20 text-emerald-300 border-emerald-500/40"
-                : "bg-slate-800/80 text-slate-400 border-slate-700"
+                ? "bg-emerald-500/20 text-emerald-600 dark:text-emerald-300 border-emerald-500/40"
+                : "bg-muted dark:bg-slate-800/80 text-muted-foreground border-border dark:border-slate-700"
             }`}
           >
             {assessment.isCandidate && assessment.score > 0 ? (
@@ -231,7 +231,7 @@ export function CraterDetailCard({
 
         {/* Dual-Mode Selector for Candidates */}
         {assessment.isCandidate && assessment.score > 0 && assessment.remediatedScore !== undefined && (
-          <div className="flex items-center gap-1.5 p-1 bg-slate-950/80 border border-slate-800 rounded-xl my-2">
+          <div className="flex items-center gap-1.5 p-1 bg-muted/80 dark:bg-slate-950/80 border border-border dark:border-slate-800 rounded-xl my-2">
             <button
               onClick={() => {
                 sfx.playClick(900);
@@ -239,7 +239,7 @@ export function CraterDetailCard({
               }}
               className={`flex-1 text-[10px] font-mono font-bold py-1 px-2 rounded-lg transition-all ${
                 assessmentMode === "natural"
-                  ? "bg-slate-800 text-slate-100 shadow-sm border border-slate-700"
+                  ? "bg-card dark:bg-slate-800 text-foreground shadow-sm border border-border dark:border-slate-700"
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
@@ -252,8 +252,8 @@ export function CraterDetailCard({
               }}
               className={`flex-1 text-[10px] font-mono font-bold py-1 px-2 rounded-lg transition-all ${
                 assessmentMode === "remediated"
-                  ? "bg-cyan-500/20 text-cyan-200 shadow-sm border border-cyan-500/50"
-                  : "text-muted-foreground hover:text-cyan-300"
+                  ? "bg-cyan-500/20 text-cyan-700 dark:text-cyan-200 shadow-sm border border-cyan-500/50"
+                  : "text-muted-foreground hover:text-cyan-500 dark:hover:text-cyan-300"
               }`}
             >
               Planetary Engineered ({assessment.remediatedScore.toFixed(1)})
@@ -343,66 +343,66 @@ export function CraterDetailCard({
         {/* Candidate Multimodal Evidence Breakdown */}
         {assessment.isCandidate && assessment.score > 0 ? (
           <div className="mt-3 pt-3 border-t border-border/50 space-y-2">
-            <span className="text-[10px] font-mono font-bold text-slate-300 uppercase tracking-wider block">
+            <span className="text-[10px] font-mono font-bold text-foreground uppercase tracking-wider block">
               Observed Remote-Sensing Evidence Breakdown
             </span>
 
             <div className="grid grid-cols-2 gap-2 text-xs font-mono">
-              <div className="bg-slate-950/50 p-2 rounded-xl border border-border/40">
+              <div className="bg-muted/40 dark:bg-slate-950/50 p-2 rounded-xl border border-border/60">
                 <div className="flex justify-between text-[10px] text-muted-foreground mb-1">
                   <span>OPTICAL PIT (OHRC/NAC)</span>
-                  <span className="font-bold text-emerald-400">
+                  <span className="font-bold text-emerald-600 dark:text-emerald-400">
                     {(assessment.opticalEvidence * 100).toFixed(0)}%
                   </span>
                 </div>
-                <div className="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                <div className="w-full bg-muted dark:bg-slate-800 h-1.5 rounded-full overflow-hidden">
                   <div
-                    className="bg-emerald-400 h-full rounded-full"
+                    className="bg-emerald-500 h-full rounded-full"
                     style={{ width: `${assessment.opticalEvidence * 100}%` }}
                   />
                 </div>
               </div>
 
-              <div className="bg-slate-950/50 p-2 rounded-xl border border-border/40">
+              <div className="bg-muted/40 dark:bg-slate-950/50 p-2 rounded-xl border border-border/60">
                 <div className="flex justify-between text-[10px] text-muted-foreground mb-1">
                   <span>RADAR ANOMALY (MINI-RF)</span>
-                  <span className="font-bold text-cyan-400">
+                  <span className="font-bold text-cyan-600 dark:text-cyan-400">
                     {(assessment.radarEvidence * 100).toFixed(0)}%
                   </span>
                 </div>
-                <div className="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                <div className="w-full bg-muted dark:bg-slate-800 h-1.5 rounded-full overflow-hidden">
                   <div
-                    className="bg-cyan-400 h-full rounded-full"
+                    className="bg-cyan-500 h-full rounded-full"
                     style={{ width: `${assessment.radarEvidence * 100}%` }}
                   />
                 </div>
               </div>
 
-              <div className="bg-slate-950/50 p-2 rounded-xl border border-border/40">
+              <div className="bg-muted/40 dark:bg-slate-950/50 p-2 rounded-xl border border-border/60">
                 <div className="flex justify-between text-[10px] text-muted-foreground mb-1">
                   <span>TOPO DEPRESSION (DEM)</span>
-                  <span className="font-bold text-amber-400">
+                  <span className="font-bold text-amber-600 dark:text-amber-400">
                     {(assessment.topoEvidence * 100).toFixed(0)}%
                   </span>
                 </div>
-                <div className="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                <div className="w-full bg-muted dark:bg-slate-800 h-1.5 rounded-full overflow-hidden">
                   <div
-                    className="bg-amber-400 h-full rounded-full"
+                    className="bg-amber-500 h-full rounded-full"
                     style={{ width: `${assessment.topoEvidence * 100}%` }}
                   />
                 </div>
               </div>
 
-              <div className="bg-slate-950/50 p-2 rounded-xl border border-border/40">
+              <div className="bg-muted/40 dark:bg-slate-950/50 p-2 rounded-xl border border-border/60">
                 <div className="flex justify-between text-[10px] text-muted-foreground mb-1">
                   <span>GRAVITY DEFICIT (GRAIL)</span>
-                  <span className="font-bold text-indigo-400">
+                  <span className="font-bold text-indigo-600 dark:text-indigo-400">
                     {(assessment.gravityEvidence * 100).toFixed(0)}%
                   </span>
                 </div>
-                <div className="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                <div className="w-full bg-muted dark:bg-slate-800 h-1.5 rounded-full overflow-hidden">
                   <div
-                    className="bg-indigo-400 h-full rounded-full"
+                    className="bg-indigo-500 h-full rounded-full"
                     style={{ width: `${assessment.gravityEvidence * 100}%` }}
                   />
                 </div>
@@ -411,22 +411,22 @@ export function CraterDetailCard({
 
             {/* Geomechanical Factor of Safety Simulation */}
             {assessment.geomechanics && (
-              <div className="bg-slate-950/70 p-2.5 rounded-xl border border-border/50 text-[11px] font-mono mt-2 space-y-1">
+              <div className="bg-muted/50 dark:bg-slate-950/70 p-2.5 rounded-xl border border-border/60 text-[11px] font-mono mt-2 space-y-1">
                 <div className="flex items-center justify-between">
                   <span className="text-muted-foreground text-[10px]">SIMULATED FACTOR OF SAFETY (FS):</span>
-                  <span className="font-bold text-emerald-300">
+                  <span className="font-bold text-emerald-600 dark:text-emerald-300">
                     Median: {assessment.geomechanics.medianFS.toFixed(1)} &bull; [{assessment.geomechanics.fsRange[0]} &ndash; {assessment.geomechanics.fsRange[1]}]
                   </span>
                 </div>
                 <div className="flex items-center justify-between text-[10px] text-muted-foreground">
                   <span>Crown Tensile Range:</span>
-                  <span className="text-slate-200">
+                  <span className="text-foreground">
                     {assessment.geomechanics.crownTensionMPa[0]} &ndash; {assessment.geomechanics.crownTensionMPa[1]} MPa
                   </span>
                 </div>
                 <div className="flex items-center justify-between text-[10px] text-muted-foreground">
                   <span>Assumed Span & Roof:</span>
-                  <span className="text-slate-200">
+                  <span className="text-foreground">
                     Span: {assessment.geomechanics.assumedSpanM[0]}&ndash;{assessment.geomechanics.assumedSpanM[1]}m, Roof: {assessment.geomechanics.assumedRoofM[0]}&ndash;{assessment.geomechanics.assumedRoofM[1]}m
                   </span>
                 </div>
@@ -436,14 +436,14 @@ export function CraterDetailCard({
         ) : (
           /* Impact Crater Gate 2 Exclusion Notice (Zero Fake Data Guarantee) */
           <div className="mt-3 pt-3 border-t border-border/40 space-y-2">
-            <div className="p-2.5 rounded-xl bg-slate-950/60 border border-slate-800 text-[11px] font-mono text-muted-foreground space-y-1">
-              <span className="font-bold text-slate-300 block">
+            <div className="p-2.5 rounded-xl bg-muted/40 dark:bg-slate-950/60 border border-border dark:border-slate-800 text-[11px] font-mono text-muted-foreground space-y-1">
+              <span className="font-bold text-foreground block">
                 Scientific Pipeline Decision:
               </span>
               <p className="leading-relaxed text-[11px]">
                 {assessment.gate2ExclusionReason}
               </p>
-              <div className="pt-1 flex items-center gap-1.5 text-[10px] text-amber-400">
+              <div className="pt-1 flex items-center gap-1.5 text-[10px] text-amber-500 dark:text-amber-400">
                 <ShieldCheck className="size-3" />
                 <span>Zero Fake Data Policy: Non-volcanic landmarks are not scored as habitats.</span>
               </div>
@@ -459,12 +459,12 @@ export function CraterDetailCard({
 
       {/* Key Stats Grid */}
       <div className="grid grid-cols-2 gap-2 text-xs font-mono">
-        <div className="rounded-2xl border border-border/50 bg-slate-900/40 p-2.5">
+        <div className="rounded-2xl border border-border/60 bg-muted/40 dark:bg-slate-900/40 p-2.5">
           <span className="text-[10px] text-muted-foreground block mb-0.5">COORDINATES</span>
           <span className="font-bold text-foreground">{formatCoord(feature.lat, feature.lon)}</span>
         </div>
 
-        <div className="rounded-2xl border border-border/50 bg-slate-900/40 p-2.5">
+        <div className="rounded-2xl border border-border/60 bg-muted/40 dark:bg-slate-900/40 p-2.5">
           <span className="text-[10px] text-muted-foreground block mb-0.5">DIAMETER</span>
           <span className="font-bold text-foreground">
             {feature.diameterKm < 1
@@ -474,7 +474,7 @@ export function CraterDetailCard({
         </div>
 
         {feature.depthKm !== undefined && (
-          <div className="rounded-2xl border border-border/50 bg-slate-900/40 p-2.5">
+          <div className="rounded-2xl border border-border/60 bg-muted/40 dark:bg-slate-900/40 p-2.5">
             <span className="text-[10px] text-muted-foreground block mb-0.5">DEPTH</span>
             <span className="font-bold text-foreground">
               {feature.depthKm < 1
@@ -485,9 +485,9 @@ export function CraterDetailCard({
         )}
 
         {feature.geologicalEra && (
-          <div className="rounded-2xl border border-border/50 bg-slate-900/40 p-2.5">
+          <div className="rounded-2xl border border-border/60 bg-muted/40 dark:bg-slate-900/40 p-2.5">
             <span className="text-[10px] text-muted-foreground block mb-0.5">ERA / AGE</span>
-            <span className="font-bold text-amber-400">{feature.geologicalEra}</span>
+            <span className="font-bold text-amber-600 dark:text-amber-400">{feature.geologicalEra}</span>
           </div>
         )}
       </div>
@@ -502,7 +502,7 @@ export function CraterDetailCard({
             {feature.highlights.map((h, i) => (
               <span
                 key={i}
-                className="text-[11px] font-mono px-2.5 py-1 rounded-xl border border-border/60 bg-slate-900/30 text-slate-300"
+                className="text-[11px] font-mono px-2.5 py-1 rounded-xl border border-border/60 bg-muted/40 text-foreground"
               >
                 &bull; {h}
               </span>
@@ -514,35 +514,35 @@ export function CraterDetailCard({
       {/* Associated Space Mission */}
       {feature.associatedMission && (
         <div className="flex items-center gap-2 p-2.5 rounded-2xl border border-blue-500/30 bg-blue-500/10 text-xs">
-          <Rocket className="size-4 text-blue-400 shrink-0" />
-          <span className="font-mono text-slate-300 text-[11px]">
-            <strong className="text-blue-300">Exploration Data:</strong> {feature.associatedMission}
+          <Rocket className="size-4 text-blue-500 dark:text-blue-400 shrink-0" />
+          <span className="font-mono text-muted-foreground text-[11px]">
+            <strong className="text-blue-600 dark:text-blue-300">Exploration Data:</strong> {feature.associatedMission}
           </span>
         </div>
       )}
 
       {/* ISRO MOSDAC Earth Volcanic Analog Twin Profile */}
-      <div className="rounded-2xl border border-emerald-500/30 bg-emerald-950/20 p-3 space-y-2 text-xs">
+      <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/5 dark:bg-emerald-950/20 p-3 space-y-2 text-xs">
         <div className="flex items-center justify-between">
-          <span className="font-mono text-[10px] uppercase font-bold text-emerald-400 flex items-center gap-1.5">
-            <span className="size-2 rounded-full bg-emerald-400 animate-pulse" />
+          <span className="font-mono text-[10px] uppercase font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-1.5">
+            <span className="size-2 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse" />
             ISRO MOSDAC Earth Analog Twin
           </span>
-          <span className="font-mono text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold border border-emerald-500/30">
+          <span className="font-mono text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 font-bold border border-emerald-500/30">
             &epsilon;r&apos; = {twin.permittivity}
           </span>
         </div>
         <div className="font-semibold text-foreground text-xs">{twin.station}</div>
         <p className="text-[11px] text-muted-foreground leading-relaxed">{twin.analogy}</p>
-        <div className="pt-1 flex flex-wrap items-center justify-between text-[10px] font-mono text-slate-400 border-t border-emerald-500/20">
+        <div className="pt-1 flex flex-wrap items-center justify-between text-[10px] font-mono text-muted-foreground border-t border-emerald-500/20">
           <span>Sensors: {twin.sensors}</span>
-          <span className="text-emerald-400/90">{twin.location}</span>
+          <span className="text-emerald-600 dark:text-emerald-400/90 font-medium">{twin.location}</span>
         </div>
       </div>
 
       {/* Scientific Provenance & Two-Claim Split Disclaimer */}
-      <div className="p-2.5 rounded-xl bg-slate-950/70 border border-slate-800 text-[10px] font-mono text-muted-foreground">
-        <span className="text-amber-400/90 font-bold block mb-0.5">ML Data Provenance:</span>
+      <div className="p-2.5 rounded-xl bg-muted/40 dark:bg-slate-950/70 border border-border dark:border-slate-800 text-[10px] font-mono text-muted-foreground">
+        <span className="text-amber-600 dark:text-amber-400/90 font-bold block mb-0.5">ML Data Provenance:</span>
         <span className="block leading-relaxed">{assessment.scientificDisclaimer}</span>
       </div>
 
@@ -553,16 +553,16 @@ export function CraterDetailCard({
             sfx.playClick(900);
             setShowJsonTelemetry(!showJsonTelemetry);
           }}
-          className="w-full flex items-center justify-between px-3 py-1.5 rounded-xl border border-slate-800 bg-slate-900/30 text-[10px] font-mono text-muted-foreground hover:text-foreground transition-all"
+          className="w-full flex items-center justify-between px-3 py-1.5 rounded-xl border border-border dark:border-slate-800 bg-muted/30 dark:bg-slate-900/30 text-[10px] font-mono text-muted-foreground hover:text-foreground transition-all"
         >
           <span className="flex items-center gap-1.5">
-            <Database className="size-3 text-cyan-400" /> Inspect Raw ML Pipeline JSON Telemetry
+            <Database className="size-3 text-cyan-500 dark:text-cyan-400" /> Inspect Raw ML Pipeline JSON Telemetry
           </span>
           {showJsonTelemetry ? <ChevronUp className="size-3" /> : <ChevronDown className="size-3" />}
         </button>
 
         {showJsonTelemetry && (
-          <pre className="mt-2 p-3 rounded-2xl bg-slate-950 border border-slate-800 text-[10px] font-mono text-cyan-300 overflow-x-auto max-h-48 leading-tight">
+          <pre className="mt-2 p-3 rounded-2xl bg-muted/60 dark:bg-slate-950 border border-border dark:border-slate-800 text-[10px] font-mono text-cyan-700 dark:text-cyan-300 overflow-x-auto max-h-48 leading-tight">
             {JSON.stringify(assessment, null, 2)}
           </pre>
         )}
@@ -632,9 +632,9 @@ export function CraterDetailCard({
                   {shapData.base_probas && Object.keys(shapData.base_probas).length > 0 && (
                     <div className="grid grid-cols-2 gap-1">
                       {Object.entries(shapData.base_probas).map(([model, p]) => (
-                        <div key={model} className="flex items-center justify-between bg-slate-900/40 rounded-lg px-2 py-1 text-[9px] font-mono">
-                          <span className="text-slate-400">{model.replace("LightGBM", "LGBM").replace("CatBoost", "CB").replace("RandomForest", "RF")}</span>
-                          <span className="text-violet-300 font-bold">{(p * 100).toFixed(1)}%</span>
+                        <div key={model} className="flex items-center justify-between bg-muted/40 dark:bg-slate-900/40 rounded-lg px-2 py-1 text-[9px] font-mono">
+                          <span className="text-muted-foreground">{model.replace("LightGBM", "LGBM").replace("CatBoost", "CB").replace("RandomForest", "RF")}</span>
+                          <span className="text-violet-600 dark:text-violet-300 font-bold">{(p * 100).toFixed(1)}%</span>
                         </div>
                       ))}
                     </div>

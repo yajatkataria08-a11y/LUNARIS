@@ -350,7 +350,7 @@ export function CosmicStarfield() {
       if (isLight || isUrja) return; // no stars in light/urja mode
 
       const palette = isJungo ? starPalette : starPalette; // dark & jungo use same palette
-      const count = Math.min(220, Math.floor((cssW * cssH) / 5800));
+      const count = Math.min(95, Math.floor((cssW * cssH) / 10000));
 
       for (let i = 0; i < count; i++) {
         const roll = Math.random();
@@ -733,6 +733,12 @@ export function CosmicStarfield() {
 
       bgCtx.clearRect(0, 0, cssW, cssH);
       fgCtx.clearRect(0, 0, cssW, cssH);
+
+      // In daylight/urja mode: keep background pristine, crystal-clear and 100% lag-free
+      if (isLight || isUrja) {
+        animationFrameId = requestAnimationFrame(render);
+        return;
+      }
 
       // ─── Silky Responsive Cursor Tracking ─────────────────────────────────
       if (mouse.active) {
