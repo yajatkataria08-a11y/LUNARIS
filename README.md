@@ -5,7 +5,7 @@
 
 <!-- ANIMATED TYPING SVG -->
 <a href="https://github.com/yajatkataria08-a11y/LUNARIS">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=18&duration=3000&pause=1000&color=38BDF8&center=true&vCenter=true&multiline=true&width=700&height=70&lines=Mapping+lunar+lava+tubes+with+Chandrayaan+AI+🛰️;43%2F43+tests+passing+·+0+TypeScript+errors+✅;Marius+Hills+LHI%3A+95.6%2F100+·+TIER+1+PRIORITY+🌙" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=19&duration=3000&pause=1000&color=38BDF8&center=true&vCenter=true&width=700&height=50&lines=Mapping+lunar+lava+tubes+with+Chandrayaan+AI;43%2F43+tests+passing+%7C+0+TypeScript+errors;Marius+Hills+LHI%3A+95.6%2F100+(Tier+1+Priority);ISRO+OHRC+0.25m+%2B+DFSAR+m-chi+polarimetry" alt="LUNARIS Animated Typing" />
 </a>
 
 <br/>
