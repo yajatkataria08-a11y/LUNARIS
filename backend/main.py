@@ -765,11 +765,13 @@ except ImportError:
 
 
 if __name__ == "__main__":
+    _host = os.environ.get("HOST", "0.0.0.0")
+    _port = int(os.environ.get("PORT", 8000))
     if HAS_FASTAPI:
         try:
             import uvicorn
-            uvicorn.run("backend.main:app", host="127.0.0.1", port=8000, reload=False)
+            uvicorn.run("backend.main:app", host=_host, port=_port, reload=False)
         except Exception:
-            run_standalone_server("127.0.0.1", 8000)
+            run_standalone_server(_host, _port)
     else:
-        run_standalone_server("127.0.0.1", 8000)
+        run_standalone_server(_host, _port)
