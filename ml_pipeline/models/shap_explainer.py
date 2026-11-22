@@ -2,7 +2,13 @@
 
 from typing import Dict, Any, List, Optional
 import numpy as np
-import shap
+
+try:
+    import shap
+    HAS_SHAP = True
+except ImportError:
+    HAS_SHAP = False
+    shap = None
 
 from ml_pipeline.models.ensemble_stacker import ensemble_stacker, FEATURE_NAMES
 
@@ -29,11 +35,11 @@ class LunarShapExplainer:
 
     def explain_candidate(self, feature_dict: Dict[str, float]) -> Dict[str, Any]:
         """Compute local SHAP attribution values for an individual lunar candidate."""
+        if not HAS_SHAP or self.explainer is None or getattr(self.ensemble, "scaler", None) is None:
+            return self._fallback_explanation(feature_dict)
+
         vector = np.array([feature_dict.get(fname, 0.0) for fname in self.feature_names], dtype=np.float32).reshape(1, -1)
         scaled_vec = self.ensemble.scaler.transform(vector)
-
-        if self.explainer is None:
-            return self._fallback_explanation(feature_dict)
 
         raw_sv = self.explainer.shap_values(scaled_vec)
         if isinstance(raw_sv, list):

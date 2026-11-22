@@ -943,7 +943,7 @@ export function CosmicStarfield() {
 
           // ─── Render as ONE Smooth Volumetric Cloud Mass (Zero-Allocation Hardware Sprites) ───
           const visibleAlpha = Math.max(0, 1 - c.scatter * 0.88);
-          const baseCloudAlpha = (0.50 + c.flarePower * 0.30) * visibleAlpha;
+          const baseCloudAlpha = (0.72 + c.flarePower * 0.25) * visibleAlpha;
 
           if (baseCloudAlpha > 0.015) {
             bgCtx.globalAlpha = baseCloudAlpha;

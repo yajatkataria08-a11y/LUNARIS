@@ -45,12 +45,17 @@ async function request<T>(path: string, opts: ReqOpts = {}): Promise<T> {
   const retries = method === "GET" ? opts.retries ?? 2 : 0; // never retry non-idempotent calls
   let lastErr: unknown;
 
-  // Primary URL base (Next.js proxy) and fallback direct port 8000 on current hostname
+  // Primary URL base (Next.js proxy). ONLY fallback to port 8000 on localhost/127.0.0.1 to avoid hanging on production domains.
   const candidateBases = [v1()];
   if (typeof window !== "undefined") {
-    const directHost = `${window.location.protocol}//${window.location.hostname || "127.0.0.1"}:8000/api/v1`;
-    if (!candidateBases.includes(directHost)) {
-      candidateBases.push(directHost);
+    const isLocalhost =
+      window.location.hostname === "localhost" ||
+      window.location.hostname === "127.0.0.1";
+    if (isLocalhost) {
+      const directHost = `${window.location.protocol}//${window.location.hostname}:8000/api/v1`;
+      if (!candidateBases.includes(directHost)) {
+        candidateBases.push(directHost);
+      }
     }
   }
 

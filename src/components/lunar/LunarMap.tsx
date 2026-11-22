@@ -73,8 +73,8 @@ export function LunarMap({
     <div className={`relative ${className}`}>
       {/* Top Map Action Toolbar */}
       <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-        <div className="flex items-center gap-1.5 bg-slate-900/60 p-1 rounded-2xl border border-slate-700/40 text-xs font-mono">
-          <span className="text-[10px] text-amber-400 font-bold px-2 flex items-center gap-1">
+        <div className="flex items-center gap-1.5 bg-card/85 p-1 rounded-2xl border border-border text-xs font-mono backdrop-blur-md">
+          <span className="text-[10px] text-amber-500 dark:text-amber-400 font-bold px-2 flex items-center gap-1">
             <Layers className="size-3" /> TEXTURE:
           </span>
           <button
@@ -85,7 +85,7 @@ export function LunarMap({
             className={`px-2 py-0.5 rounded-xl text-[10px] transition-all ${
               textureMode === "nasa_albedo"
                 ? "bg-cyan-500 text-slate-950 font-bold shadow-sm"
-                : "text-slate-300 hover:text-white"
+                : "text-muted-foreground hover:text-foreground"
             }`}
           >
             NASA Visible (LROC)
@@ -97,8 +97,8 @@ export function LunarMap({
             }}
             className={`px-2 py-0.5 rounded-xl text-[10px] transition-all ${
               textureMode === "nasa_topo"
-                ? "bg-blue-500 text-slate-950 font-bold shadow-sm"
-                : "text-slate-300 hover:text-white"
+                ? "bg-blue-500 text-white font-bold shadow-sm"
+                : "text-muted-foreground hover:text-foreground"
             }`}
           >
             LOLA Topo
@@ -111,7 +111,7 @@ export function LunarMap({
             className={`px-2 py-0.5 rounded-xl text-[10px] transition-all ${
               textureMode === "schematic"
                 ? "bg-slate-700 text-white font-bold"
-                : "text-slate-300 hover:text-white"
+                : "text-muted-foreground hover:text-foreground"
             }`}
           >
             Schematic
@@ -358,9 +358,9 @@ export function LunarMap({
 
         {/* Hover Tooltip for Candidate Site */}
         {hovered && (
-          <div className="pointer-events-none absolute left-3 bottom-3 rounded-2xl border border-cyan-500/30 bg-slate-950/95 px-3.5 py-2 text-xs shadow-xl backdrop-blur-md">
-            <div className="font-sans font-bold text-cyan-300">{hovered.name}</div>
-            <div className="font-mono text-slate-300 text-[11px]">
+          <div className="pointer-events-none absolute left-3 bottom-3 rounded-2xl border border-cyan-500/40 bg-card/95 text-foreground px-3.5 py-2 text-xs shadow-xl backdrop-blur-md">
+            <div className="font-sans font-bold text-cyan-600 dark:text-cyan-300">{hovered.name}</div>
+            <div className="font-mono text-muted-foreground text-[11px]">
               Rank #{hovered.rank} &bull; Score {hovered.habitatScore.toFixed(0)} &bull; Lava tube {Math.round(hovered.detection.probability * 100)}%
             </div>
           </div>
@@ -368,8 +368,8 @@ export function LunarMap({
 
         {/* Hover Tooltip for Crater */}
         {activeCrater && !hovered && (
-          <div className="pointer-events-none absolute right-3 bottom-3 rounded-2xl border border-slate-800 bg-slate-950/95 px-3.5 py-2 text-xs shadow-xl backdrop-blur-md">
-            <div className="font-sans font-bold text-slate-200">{activeCrater.name}</div>
+          <div className="pointer-events-none absolute right-3 bottom-3 rounded-2xl border border-border bg-card/95 text-foreground px-3.5 py-2 text-xs shadow-xl backdrop-blur-md">
+            <div className="font-sans font-bold text-foreground">{activeCrater.name}</div>
             <div className="font-mono text-muted-foreground text-[11px]">
               {activeCrater.diameterKm < 1 ? `${Math.round(activeCrater.diameterKm * 1000)}m` : `${activeCrater.diameterKm}km diam`} &bull; {activeCrater.hemisphere.replace("_", " ")}
             </div>

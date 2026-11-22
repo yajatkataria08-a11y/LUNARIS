@@ -1,20 +1,20 @@
 {
   "eslint.config.mjs": {
-    "mtime": 1795293423.9348474,
-    "seen": 1795293583.3954427,
-    "ast_hash": "b43f470c5df5e9ff4c2f5e0bd917a881",
-    "semantic_hash": "b43f470c5df5e9ff4c2f5e0bd917a881"
+    "mtime": 1795303345.7234643,
+    "seen": 1795305363.0004447,
+    "ast_hash": "729e3dda12921f8c103dc54cef265c31",
+    "semantic_hash": ""
   },
   "next.config.ts": {
-    "mtime": 1795293423.948385,
-    "seen": 1795293583.3955467,
-    "ast_hash": "cd3cf26bba2af037513f9b26542f014e",
-    "semantic_hash": "cd3cf26bba2af037513f9b26542f014e"
+    "mtime": 1795303340.3779368,
+    "seen": 1795305363.0005767,
+    "ast_hash": "e2d4455770b4b4b587c5ffb1871b13f5",
+    "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1795295558.478968,
-    "seen": 1795295590.7394342,
-    "ast_hash": "d6d39c2d3dc345d91dc0c8b9ad407d9f",
+    "mtime": 1795304164.2324548,
+    "seen": 1795305363.000623,
+    "ast_hash": "7c33c07f69040f1626c326ef5cf84293",
     "semantic_hash": ""
   },
   "postcss.config.mjs": {
@@ -42,10 +42,10 @@
     "semantic_hash": "990276d189840b15b878f0197de5785b"
   },
   "src/app/layout.tsx": {
-    "mtime": 1795293423.9879088,
-    "seen": 1795293583.395632,
-    "ast_hash": "9ce40140cc4d5e09ad6fadc6ef612da5",
-    "semantic_hash": "9ce40140cc4d5e09ad6fadc6ef612da5"
+    "mtime": 1795304942.920258,
+    "seen": 1795305363.0006866,
+    "ast_hash": "9099deb31204bf9c4c1a106670ccf9b0",
+    "semantic_hash": ""
   },
   "src/app/login/callback/page.tsx": {
     "mtime": 1795293423.9879088,
@@ -96,10 +96,10 @@
     "semantic_hash": "545f53d4c16432a673fb5c92c16e335c"
   },
   "src/components/astronomy/CosmicStarfield.tsx": {
-    "mtime": 1795293423.9879088,
-    "seen": 1795293583.3956585,
-    "ast_hash": "7f1dcde5c39a9920ca41eb0678ae5d92",
-    "semantic_hash": "7f1dcde5c39a9920ca41eb0678ae5d92"
+    "mtime": 1795306769.956369,
+    "seen": 1795306860.867167,
+    "ast_hash": "cffbe66d19821836bdb93756a0b9387e",
+    "semantic_hash": ""
   },
   "src/components/lunar/CrossSection.tsx": {
     "mtime": 1795293423.9879088,
@@ -114,9 +114,9 @@
     "semantic_hash": ""
   },
   "src/components/lunar/LunarMap.tsx": {
-    "mtime": 1795297566.535528,
-    "seen": 1795297807.772929,
-    "ast_hash": "312351f19289fc88b33ed4b441612c71",
+    "mtime": 1795306746.6346436,
+    "seen": 1795306860.8671854,
+    "ast_hash": "f6571ff297dfd63f87f4d5f58b6aa0b2",
     "semantic_hash": ""
   },
   "src/components/lunar/Meter.tsx": {
@@ -168,10 +168,10 @@
     "semantic_hash": ""
   },
   "src/components/ui/OAuthButtons.tsx": {
-    "mtime": 1795293423.9950273,
-    "seen": 1795293583.39571,
-    "ast_hash": "665d1a69ec8435453a7edc2116c3406f",
-    "semantic_hash": "665d1a69ec8435453a7edc2116c3406f"
+    "mtime": 1795305587.3718855,
+    "seen": 1795305732.037663,
+    "ast_hash": "fa5380ca4ca1964af1f26311d2ffcece",
+    "semantic_hash": ""
   },
   "src/components/ui/ScrollReveal.tsx": {
     "mtime": 1795293423.9950273,
@@ -186,9 +186,9 @@
     "semantic_hash": "e7dbaea9cfa30a2ea4b1e1b4ab81b9f2"
   },
   "src/lib/api-client.ts": {
-    "mtime": 1795296141.433961,
-    "seen": 1795296267.5070603,
-    "ast_hash": "f451be61eece2de50146f5fa1e95846b",
+    "mtime": 1795306717.6575582,
+    "seen": 1795306860.8672476,
+    "ast_hash": "d28bfe5b47bc44cbca66fa5a52c8d2ab",
     "semantic_hash": ""
   },
   "src/lib/audio-sfx.ts": {
@@ -198,10 +198,10 @@
     "semantic_hash": "5a224aa4b087eea83f2525b0d74d10fc"
   },
   "src/lib/auth.tsx": {
-    "mtime": 1795293423.9950273,
-    "seen": 1795293583.395725,
-    "ast_hash": "bbb3679ccbfb284b361201a93eabd4a5",
-    "semantic_hash": "bbb3679ccbfb284b361201a93eabd4a5"
+    "mtime": 1795305576.2160408,
+    "seen": 1795305732.0376828,
+    "ast_hash": "0c68f3808a2ab8ce514a034947ed5379",
+    "semantic_hash": ""
   },
   "src/lib/hooks.ts": {
     "mtime": 1795293423.9950273,
@@ -252,9 +252,9 @@
     "semantic_hash": "0cf97a81150d3b8904f285780896980d"
   },
   "backend/main.py": {
-    "mtime": 1795295899.8596025,
-    "seen": 1795296267.5067139,
-    "ast_hash": "d911bfb6d7464ebf187acefaaa58b5bc",
+    "mtime": 1795305553.884931,
+    "seen": 1795305732.037183,
+    "ast_hash": "045edeacb2de86d78550ecf8a976680b",
     "semantic_hash": ""
   },
   "configs/data.yaml": {
@@ -432,9 +432,9 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1795229824.0,
-    "seen": 1795265422.9905257,
-    "ast_hash": "f15aaa42d5d299d091b1171097ea56ad",
+    "mtime": 1795305322.882546,
+    "seen": 1795305363.0008376,
+    "ast_hash": "5a84435261e763af1d1cf8c6be503f24",
     "semantic_hash": ""
   },
   "ml_pipeline.md": {
@@ -612,15 +612,15 @@
     "semantic_hash": ""
   },
   "src/components/lunar/CraterDetailCard.tsx": {
-    "mtime": 1795300270.6249373,
-    "seen": 1795300419.0030973,
-    "ast_hash": "7dd46d31b80d25289a7cf2ad7f7a8509",
+    "mtime": 1795305199.1021054,
+    "seen": 1795305363.0007184,
+    "ast_hash": "c086155db283f863750518fe70038bcb",
     "semantic_hash": ""
   },
   "src/components/lunar/LunarGlobe3D.tsx": {
-    "mtime": 1795297729.4039488,
-    "seen": 1795297807.772927,
-    "ast_hash": "df0265bb7c108c3fee594f80650c03f5",
+    "mtime": 1795305633.041352,
+    "seen": 1795305732.0376062,
+    "ast_hash": "827e43f7fc00f8a5d9b2be2a3b4d8da8",
     "semantic_hash": ""
   },
   "src/components/lunar/LunarMap2D.tsx": {
@@ -738,15 +738,15 @@
     "semantic_hash": ""
   },
   "ml_pipeline/models/ensemble_stacker.py": {
-    "mtime": 1795293423.948385,
-    "seen": 1795293583.395501,
-    "ast_hash": "0706f7ae70da58869a5d7cf6dcc16619",
+    "mtime": 1795306619.763745,
+    "seen": 1795306860.8669133,
+    "ast_hash": "bef33d274810248db89b86633b9126d5",
     "semantic_hash": ""
   },
   "ml_pipeline/models/shap_explainer.py": {
-    "mtime": 1795293423.948385,
-    "seen": 1795293583.3955092,
-    "ast_hash": "8d89d6c0a40b9cf2d76ac4d2bf2e30ea",
+    "mtime": 1795306643.143986,
+    "seen": 1795306860.866928,
+    "ast_hash": "ab095bd55482a0538900234e76bf3cf0",
     "semantic_hash": ""
   },
   "ml_pipeline/ranking/isro_scoring.py": {
@@ -810,9 +810,9 @@
     "semantic_hash": ""
   },
   "run.py": {
-    "mtime": 1795293423.9782822,
-    "seen": 1795293583.3955894,
-    "ast_hash": "703296b1e355360571123bed42cc156b",
+    "mtime": 1795303949.9335847,
+    "seen": 1795305363.0006323,
+    "ast_hash": "4f20a641fb652e1e835fb36674e3a7fa",
     "semantic_hash": ""
   },
   "scripts/generate_all_candidate_dossiers.py": {
@@ -882,15 +882,27 @@
     "semantic_hash": ""
   },
   "src/components/lunar/ShapScoreSection.tsx": {
-    "mtime": 1795298449.9345036,
-    "seen": 1795298538.2515278,
-    "ast_hash": "eb1ba5195fe16510d817fef82eee05ff",
+    "mtime": 1795305001.368508,
+    "seen": 1795305363.000746,
+    "ast_hash": "718ed498a0f4424d9422ab2260812d34",
+    "semantic_hash": ""
+  },
+  "requirements.txt": {
+    "mtime": 1795306578.2170634,
+    "seen": 1795306860.8673623,
+    "ast_hash": "4eea4ceb15150d15f8fa40c48ae9be2f",
+    "semantic_hash": ""
+  },
+  "scripts/_eval_accuracy.py": {
+    "mtime": 1795306778.2443423,
+    "seen": 1795306860.8670723,
+    "ast_hash": "f5687bb1199495a01b069711cfa105b5",
     "semantic_hash": ""
   },
   "package-lock.json": {
-    "mtime": 1795293423.9687245,
-    "seen": 1795293583.395823,
-    "ast_hash": "d57c23c35e2368406912e1c5ff718930",
+    "mtime": 1795303877.92317,
+    "seen": 1795305363.0009139,
+    "ast_hash": "def0647da62535a0a6f503c2064a1143",
     "semantic_hash": ""
   }
 }
