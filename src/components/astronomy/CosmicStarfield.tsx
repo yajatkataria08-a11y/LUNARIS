@@ -734,12 +734,6 @@ export function CosmicStarfield() {
       bgCtx.clearRect(0, 0, cssW, cssH);
       fgCtx.clearRect(0, 0, cssW, cssH);
 
-      // In daylight/urja mode: keep background pristine, crystal-clear and 100% lag-free
-      if (isLight || isUrja) {
-        animationFrameId = requestAnimationFrame(render);
-        return;
-      }
-
       // ─── Silky Responsive Cursor Tracking ─────────────────────────────────
       if (mouse.active) {
         const prevX = mouse.ringX;
@@ -1006,89 +1000,6 @@ export function CosmicStarfield() {
           }
 
 
-        }
-
-        // Active CME Particles
-        for (let eIdx = solarEjections.length - 1; eIdx >= 0; eIdx--) {
-          const ej = solarEjections[eIdx];
-          ej.x += ej.vx * dt;
-          ej.y += ej.vy * dt;
-          ej.vx *= Math.pow(0.96, dt);
-          ej.vy *= Math.pow(0.96, dt);
-          ej.alpha -= ej.decay * dt;
-
-          if (ej.alpha <= 0) {
-            solarEjections.splice(eIdx, 1);
-            continue;
-          }
-
-          const tailLen = 8 * ej.alpha;
-          const streakGrad = bgCtx.createLinearGradient(ej.x, ej.y, ej.x - ej.vx * tailLen, ej.y - ej.vy * tailLen);
-          streakGrad.addColorStop(0, `${ej.color}${ej.alpha})`);
-          streakGrad.addColorStop(1, "rgba(250, 248, 245, 0)");
-          bgCtx.strokeStyle = streakGrad;
-          bgCtx.lineWidth = ej.size;
-          bgCtx.beginPath();
-          bgCtx.moveTo(ej.x, ej.y);
-          bgCtx.lineTo(ej.x - ej.vx * tailLen, ej.y - ej.vy * tailLen);
-          bgCtx.stroke();
-
-          bgCtx.fillStyle = `rgba(255, 255, 255, ${ej.alpha})`;
-          bgCtx.beginPath();
-          bgCtx.arc(ej.x, ej.y, ej.size * 0.8, 0, Math.PI * 2);
-          bgCtx.fill();
-        }
-
-        // 3. Stable Daylight Motes (Restrained Glow & Magnetic Cursor Reactivity)
-        for (const m of uMotes) {
-          m.phase += m.twinkleSpeed * dt;
-          const pulse = (Math.sin(m.phase) + 1) * 0.5;
-          m.alpha = m.baseAlpha + pulse * (m.maxAlpha - m.baseAlpha);
-
-          // Stable pinned location with calm micro-breathing
-          m.x = m.baseX + Math.sin(t * 0.35 + m.phase) * 2.2;
-          m.y = m.baseY + Math.cos(t * 0.28 + m.phase * 1.3) * 1.8;
-
-          let drawMx = m.x;
-          let drawMy = m.y;
-          let ea = Math.max(0.35, Math.min(m.maxAlpha, m.alpha));
-
-          // Gentle magnetic deflection & glow flare when cursor nears (Jungo style)
-          if (inBounds) {
-            const mdx = m.x - mx;
-            const mdy = m.y - my;
-            const dist2 = mdx * mdx + mdy * mdy;
-            const reactR = 190;
-            if (dist2 < reactR * reactR && dist2 > 0.01) {
-              const mdist = Math.sqrt(dist2);
-              const prox  = 1 - mdist / reactR;
-              const ang   = Math.atan2(mdy, mdx);
-              drawMx += Math.cos(ang) * prox * 22;
-              drawMy += Math.sin(ang) * prox * 22;
-              ea = Math.min(m.maxAlpha * 1.35, ea + prox * 0.55);
-            }
-          }
-
-          // 1. Soft halo (Pre-rendered zero-allocation blit)
-          const haloR = m.radius * m.haloMult;
-          if (m.haloSprite) {
-            fgCtx.globalAlpha = ea * 0.55;
-            fgCtx.drawImage(m.haloSprite, drawMx - haloR, drawMy - haloR, haloR * 2, haloR * 2);
-          }
-
-          // 2. Coloured solid core disc
-          fgCtx.globalAlpha = Math.min(1.0, ea * 0.92);
-          fgCtx.fillStyle = m.coreColor;
-          fgCtx.beginPath();
-          fgCtx.arc(drawMx, drawMy, m.radius, 0, Math.PI * 2);
-          fgCtx.fill();
-
-          // 3. Starlight white pinpoint center
-          fgCtx.globalAlpha = Math.min(1.0, ea * 0.80);
-          fgCtx.fillStyle = "#FFFFFF";
-          fgCtx.beginPath();
-          fgCtx.arc(drawMx, drawMy, m.radius * 0.38, 0, Math.PI * 2);
-          fgCtx.fill();
         }
         fgCtx.globalAlpha = 1.0;
       }
