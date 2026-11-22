@@ -12,7 +12,12 @@ Features:
 from typing import Dict, Any, Tuple, Optional, List
 from dataclasses import dataclass
 import numpy as np
-import scipy.ndimage
+try:
+    import scipy.ndimage
+    HAS_SCIPY = True
+except ImportError:
+    HAS_SCIPY = False
+    scipy = None
 
 from ml_pipeline.core.taxonomy import QualityState
 
@@ -80,7 +85,13 @@ class CoregistrationEngine:
         zoom_factors = (dst_h / float(src_h), dst_w / float(src_w))
         order = 0 if is_categorical else 1
 
-        resampled = scipy.ndimage.zoom(source_raster, zoom_factors, order=order)
+        if HAS_SCIPY and scipy is not None:
+            resampled = scipy.ndimage.zoom(source_raster, zoom_factors, order=order)
+        else:
+            # Fallback nearest-neighbor resampling
+            y_idx = (np.linspace(0, src_h - 1, dst_h)).astype(int)
+            x_idx = (np.linspace(0, src_w - 1, dst_w)).astype(int)
+            resampled = source_raster[np.ix_(y_idx, x_idx)]
         return resampled[:dst_h, :dst_w]
 
     @staticmethod

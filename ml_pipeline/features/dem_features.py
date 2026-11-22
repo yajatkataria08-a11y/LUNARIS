@@ -1,5 +1,10 @@
 import numpy as np
-import scipy.ndimage
+try:
+    import scipy.ndimage
+    HAS_SCIPY = True
+except ImportError:
+    HAS_SCIPY = False
+    scipy = None
 from typing import Dict, Any
 
 class DEMFeatureExtractor:
@@ -16,10 +21,14 @@ class DEMFeatureExtractor:
         slope_deg = np.degrees(slope_rad)
         
         # Terrain Roughness Index (Riley et al. 1999) - std dev in 3x3 local neighborhood
-        tri = scipy.ndimage.generic_filter(dem_patch, np.std, size=3)
+        if HAS_SCIPY and scipy is not None:
+            tri = scipy.ndimage.generic_filter(dem_patch, np.std, size=3)
+            local_max = scipy.ndimage.maximum_filter(dem_patch, size=15)
+        else:
+            tri = np.std(dem_patch)
+            local_max = np.max(dem_patch)
         
         # Depression depth relative to local regional rim
-        local_max = scipy.ndimage.maximum_filter(dem_patch, size=15)
         depression_depth = local_max - dem_patch
         max_depth_m = float(np.max(depression_depth))
         mean_slope = float(np.mean(slope_deg))

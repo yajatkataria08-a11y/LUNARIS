@@ -130,6 +130,7 @@ export function LunarGlobe3D({
   const [sunAngle, setSunAngle] = useState(45);
   const [hoveredFeature, setHoveredFeature] = useState<LunarFeature | null>(null);
   const [cursorCoords, setCursorCoords] = useState<{ lat: number; lon: number } | null>(null);
+  const lastCoordsTimeRef = useRef(0);
   const [pinPositions, setPinPositions] = useState<
     Array<{
       feature: LunarFeature;
@@ -189,7 +190,7 @@ export function LunarGlobe3D({
       powerPreference: "high-performance",
     });
     renderer.setSize(width, height);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1.1;
     rendererRef.current = renderer;
@@ -366,8 +367,16 @@ export function LunarGlobe3D({
       // Render Three.js scene
       renderer.render(scene, camera);
 
-      // Throttle React state pin update to ~30 FPS to eliminate UI thread micro-stutters
+      // Only re-project and re-render pins if Moon moved or on initial render
+      const hasMoved =
+        Boolean(targetRotationRef.current) ||
+        isDraggingRef.current ||
+        autoRotateRef.current ||
+        Math.abs(velocityRef.current.yaw) > 0.00005 ||
+        Math.abs(velocityRef.current.pitch) > 0.00005;
+
       const now = performance.now();
+      if (!hasMoved && lastPinTime > 0) return;
       if (now - lastPinTime < 32) return;
       lastPinTime = now;
 
@@ -430,7 +439,7 @@ export function LunarGlobe3D({
       camera.aspect = nw / nh;
       camera.updateProjectionMatrix();
       renderer.setSize(nw, nh);
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
     };
 
     window.addEventListener("resize", handleResize);
@@ -507,9 +516,13 @@ export function LunarGlobe3D({
   };
 
   const handleMouseMove = (e: React.MouseEvent) => {
-    // Raycast to get hover coordinates
-    const coords = raycastToMoon(e.clientX, e.clientY);
-    setCursorCoords(coords);
+    // Throttle raycasting & state update to avoid 60 FPS React re-renders on hover
+    const now = performance.now();
+    if (now - lastCoordsTimeRef.current > 75) {
+      lastCoordsTimeRef.current = now;
+      const coords = raycastToMoon(e.clientX, e.clientY);
+      setCursorCoords(coords);
+    }
 
     if (!isDraggingRef.current) return;
     const dx = e.clientX - lastMouseRef.current.x;

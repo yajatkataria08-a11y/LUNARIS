@@ -1,5 +1,10 @@
 import numpy as np
-import cv2
+try:
+    import cv2
+    HAS_CV2 = True
+except ImportError:
+    HAS_CV2 = False
+    cv2 = None
 from typing import Dict, Any, Tuple
 
 class ClassicalCVBaseline:
@@ -14,6 +19,12 @@ class ClassicalCVBaseline:
         self.max_radius = max_radius_px
 
     def detect(self, ohrc_image: np.ndarray) -> Dict[str, Any]:
+        if not HAS_CV2 or cv2 is None:
+            return {
+                "detected_mask": np.zeros_like(ohrc_image, dtype=np.uint8),
+                "candidates_count": 0,
+                "candidates": []
+            }
         img_norm = cv2.normalize(ohrc_image, None, 0, 255, cv2.NORM_MINMAX).astype(np.uint8)
         blurred = cv2.GaussianBlur(img_norm, (9, 9), 2)
         

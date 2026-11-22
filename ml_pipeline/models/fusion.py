@@ -12,7 +12,13 @@ Implements:
 
 from typing import Dict, Any, List, Optional, Tuple
 import numpy as np
-import scipy.stats
+
+try:
+    import scipy.stats
+    HAS_SCIPY = True
+except ImportError:
+    HAS_SCIPY = False
+    scipy = None
 
 from ml_pipeline.core.taxonomy import (
     ImplementationStatus,
@@ -185,7 +191,12 @@ class EvidenceInferenceEngine:
         # Likelihood ratio under H1 (void present) vs H0 (surface/crater only)
         # Using deflated joint density under Gaussian copula
         vals = np.array([float(n.value) for n in available])
-        z_scores = scipy.stats.norm.ppf(np.clip(vals, 1e-4, 1.0 - 1e-4))
+        if HAS_SCIPY:
+            z_scores = scipy.stats.norm.ppf(np.clip(vals, 1e-4, 1.0 - 1e-4))
+        else:
+            import statistics
+            nd = statistics.NormalDist()
+            z_scores = np.array([nd.inv_cdf(float(p)) for p in np.clip(vals, 1e-4, 1.0 - 1e-4)], dtype=np.float32)
         
         try:
             inv_sigma = np.linalg.inv(sigma)

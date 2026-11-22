@@ -11,7 +11,12 @@ Implements cutting-edge solutions from:
 
 import math
 import numpy as np
-from scipy import ndimage
+try:
+    from scipy import ndimage
+    HAS_SCIPY = True
+except ImportError:
+    HAS_SCIPY = False
+    ndimage = None
 from typing import Dict, Any
 
 
@@ -48,20 +53,27 @@ class AdvancedISROFeatureExtractor:
             norm_scaled = np.zeros_like(norm_patch)
 
         # 2. Adaptive Local Sauvola/Niblack Thresholding (handles variable mare albedo)
-        local_mean = ndimage.uniform_filter(norm_scaled, size=15)
-        local_sq_mean = ndimage.uniform_filter(norm_scaled**2, size=15)
-        local_std = np.sqrt(np.maximum(0.0, local_sq_mean - local_mean**2))
+        if HAS_SCIPY and ndimage is not None:
+            local_mean = ndimage.uniform_filter(norm_scaled, size=15)
+            local_sq_mean = ndimage.uniform_filter(norm_scaled**2, size=15)
+            local_std = np.sqrt(np.maximum(0.0, local_sq_mean - local_mean**2))
 
-        # Sauvola threshold: T = m * (1 + k * (s / R - 1))
-        adaptive_thresh = local_mean * (1.0 + 0.2 * (local_std / 128.0 - 1.0))
-        binary_shadow = (norm_scaled < adaptive_thresh).astype(bool)
+            # Sauvola threshold: T = m * (1 + k * (s / R - 1))
+            adaptive_thresh = local_mean * (1.0 + 0.2 * (local_std / 128.0 - 1.0))
+            binary_shadow = (norm_scaled < adaptive_thresh).astype(bool)
 
-        # Morphological opening with 3x3 footprint to filter micrometeorite speckle
-        footprint = ndimage.generate_binary_structure(2, 2)
-        clean_shadow = ndimage.binary_opening(binary_shadow, structure=footprint)
+            # Morphological opening with 3x3 footprint to filter micrometeorite speckle
+            footprint = ndimage.generate_binary_structure(2, 2)
+            clean_shadow = ndimage.binary_opening(binary_shadow, structure=footprint)
 
-        # 3. Label Connected Components and Measure Geometry
-        labeled_mask, num_features = ndimage.label(clean_shadow)
+            # 3. Label Connected Components and Measure Geometry
+            labeled_mask, num_features = ndimage.label(clean_shadow)
+        else:
+            global_mean = float(np.mean(norm_scaled))
+            binary_shadow = (norm_scaled < global_mean * 0.7).astype(bool)
+            clean_shadow = binary_shadow
+            labeled_mask = clean_shadow.astype(int)
+            num_features = 1 if np.any(clean_shadow) else 0
         diameter_m = 0.0
         eccentricity = 0.0
         solidity = 0.0

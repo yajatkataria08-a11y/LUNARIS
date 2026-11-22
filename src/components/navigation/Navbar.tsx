@@ -28,6 +28,21 @@ interface NavbarProps {
   onOpenBatchScan?: () => void;
 }
 
+// Isolated UTC Clock to avoid re-rendering entire Navbar every second
+const UtcClock = React.memo(function UtcClock() {
+  const [time, setTime] = useState("");
+  useEffect(() => {
+    const update = () => {
+      const now = new Date();
+      setTime(now.toISOString().substring(11, 19) + " UTC");
+    };
+    update();
+    const interval = setInterval(update, 1000);
+    return () => clearInterval(interval);
+  }, []);
+  return <span className="text-[#6D28D9] dark:text-[#E2E8F0]">{time}</span>;
+});
+
 // onOpenBatchScan is accepted for API compatibility; the batch scan button lives on the pipelines page.
 export function Navbar(_props: NavbarProps) {  // eslint-disable-line @typescript-eslint/no-unused-vars
   const pathname = usePathname();
@@ -35,22 +50,11 @@ export function Navbar(_props: NavbarProps) {  // eslint-disable-line @typescrip
   const { user, guest, ready, logout } = useAuth();
   const [soundEnabled, setSoundEnabled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [utcTime, setUtcTime] = useState("");
 
   // Smooth Sliding Gold Bar Tracker
   const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0, opacity: 0 });
   const [hoveredHref, setHoveredHref] = useState<string | null>(null);
   const linkRefs = useRef<{ [key: string]: HTMLAnchorElement | null }>({});
-
-  useEffect(() => {
-    const updateTime = () => {
-      const now = new Date();
-      setUtcTime(now.toISOString().substring(11, 19) + " UTC");
-    };
-    updateTime();
-    const interval = setInterval(updateTime, 1000);
-    return () => clearInterval(interval);
-  }, []);
 
   // Update sliding gold bar position whenever pathname or hovered link changes
   useEffect(() => {
@@ -126,7 +130,7 @@ export function Navbar(_props: NavbarProps) {  // eslint-disable-line @typescrip
               <span className="opacity-40">&bull;</span>
               <span>Remote sensing</span>
               <span className="opacity-40">&bull;</span>
-              <span className="text-[#6D28D9] dark:text-[#E2E8F0]">{utcTime}</span>
+              <UtcClock />
             </div>
           </div>
         </Link>
