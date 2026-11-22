@@ -758,6 +758,58 @@ try:
         steps = int(payload.get("steps", 5)) if payload else 5
         return transfer_learner.run_pradan_finetuning(steps=steps)
 
+    # Pure open-source zero-token authentication endpoints
+    @app.post("/api/v1/auth/login")
+    def api_auth_login(payload: dict = None):
+        payload = payload or {}
+        email = payload.get("email", "analyst@lunasafe.org")
+        name = email.split("@")[0].replace(".", " ").replace("_", " ").title()
+        return {
+            "token": "lunasafe-session-" + str(abs(hash(email))),
+            "user": {
+                "id": abs(hash(email)) % 90000 + 10000,
+                "name": name or "Mission Specialist",
+                "email": email,
+                "role": "Chandrayaan Research Analyst",
+            }
+        }
+
+    @app.post("/api/v1/auth/signup")
+    def api_auth_signup(payload: dict = None):
+        payload = payload or {}
+        name = payload.get("name", "Mission Specialist")
+        email = payload.get("email", "analyst@lunasafe.org")
+        return {
+            "token": "lunasafe-session-" + str(abs(hash(email))),
+            "user": {
+                "id": abs(hash(email)) % 90000 + 10000,
+                "name": name,
+                "email": email,
+                "role": "Chandrayaan Research Analyst",
+            }
+        }
+
+    @app.get("/api/v1/auth/me")
+    def api_auth_me():
+        return {
+            "user": {
+                "id": 101,
+                "name": "Dr. Vikram Sarabhai",
+                "email": "analyst@lunasafe.org",
+                "role": "Senior Mission Specialist",
+            }
+        }
+
+    @app.get("/api/v1/auth/providers")
+    def api_auth_providers():
+        return {
+            "providers": {
+                "google": False,
+                "microsoft": False,
+                "github": False,
+            }
+        }
+
     HAS_FASTAPI = True
 except ImportError:
     HAS_FASTAPI = False

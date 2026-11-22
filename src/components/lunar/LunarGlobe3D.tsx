@@ -292,11 +292,38 @@ export function LunarGlobe3D({
     rimLight.position.set(0, 0, -10);
     scene.add(rimLight);
 
-    // 8. Animation & Render Loop
+    // 8. Animation & Render Loop (Hardware Throttled & Zero Allocations)
     let animId: number;
+    let lastPinTime = 0;
+
+    // Scratchpad vectors to eliminate GC thrashing inside 60fps render loop
+    const _vLocal = new THREE.Vector3();
+    const _vWorld = new THREE.Vector3();
+    const _vToCam = new THREE.Vector3();
+    const _vNormal = new THREE.Vector3();
+    const _vScreen = new THREE.Vector3();
+
+    // Pre-cache ML assessments so they are never re-evaluated 60x/sec in the render loop
+    const assessmentCache = new Map<string, MLCandidateAssessment>();
+    for (const c of LUNAR_CRATERS) {
+      assessmentCache.set(c.id, getFeatureMLAssessment(c, liveSites));
+    }
+
+    // IntersectionObserver to pause rendering when scrolled out of viewport
+    let isGlobeVisible = true;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isGlobeVisible = entry.isIntersecting;
+      },
+      { threshold: 0.05 }
+    );
+    observer.observe(container);
 
     const animate = () => {
       animId = requestAnimationFrame(animate);
+
+      // Skip GPU draw calls & React state updates if globe is scrolled off-screen
+      if (!isGlobeVisible) return;
 
       // Handle Smooth Rotation / Orbiting
       if (targetRotationRef.current) {
@@ -339,6 +366,11 @@ export function LunarGlobe3D({
       // Render Three.js scene
       renderer.render(scene, camera);
 
+      // Throttle React state pin update to ~30 FPS to eliminate UI thread micro-stutters
+      const now = performance.now();
+      if (now - lastPinTime < 32) return;
+      lastPinTime = now;
+
       // Calculate 2D Screen Projections for Crater Pins
       const filtered =
         filterType === "ALL"
@@ -350,31 +382,37 @@ export function LunarGlobe3D({
       const camPos = camera.position;
 
       const computedPins = filtered.map((c) => {
-        // Point on Moon surface in local coordinates
-        const localPos = latLonToMoonVector3(c.lat, c.lon, MOON_RADIUS * 1.002);
+        // Point on Moon surface in local coordinates (zero GC allocations)
+        const phi = (90 - c.lat) * (Math.PI / 180);
+        const theta = (c.lon + 180) * (Math.PI / 180);
+        const r = MOON_RADIUS * 1.002;
+        _vLocal.set(
+          -(r * Math.sin(phi) * Math.cos(theta)),
+          r * Math.cos(phi),
+          r * Math.sin(phi) * Math.sin(theta)
+        );
 
         // Convert to world coordinates
-        const worldPos = localPos.clone().applyMatrix4(moonGroup.matrixWorld);
+        _vWorld.copy(_vLocal).applyMatrix4(moonGroup.matrixWorld);
 
-        // Visibility test: Angle between surface normal and vector to camera
-        const toCam = camPos.clone().sub(worldPos).normalize();
-        const normal = worldPos.clone().sub(moonGroup.position).normalize();
-        const isFacingCamera = normal.dot(toCam) > 0.15;
+        // Visibility test
+        _vToCam.copy(camPos).sub(_vWorld).normalize();
+        _vNormal.copy(_vWorld).sub(moonGroup.position).normalize();
+        const isFacingCamera = _vNormal.dot(_vToCam) > 0.15;
 
-        // Project world coordinates to normalized device coordinates (-1 to +1)
-        const screenPos = worldPos.clone().project(camera);
+        // Project world coordinates to normalized device coordinates
+        _vScreen.copy(_vWorld).project(camera);
 
-        // Convert NDC to screen pixel coordinates
-        const screenX = (screenPos.x * 0.5 + 0.5) * w;
-        const screenY = (-(screenPos.y * 0.5) + 0.5) * h;
+        const screenX = (_vScreen.x * 0.5 + 0.5) * w;
+        const screenY = (-(_vScreen.y * 0.5) + 0.5) * h;
 
-        const assessment = getFeatureMLAssessment(c, liveSites);
+        const assessment = assessmentCache.get(c.id) || getFeatureMLAssessment(c, liveSites);
 
         return {
           feature: c,
           x: screenX,
           y: screenY,
-          visible: isFacingCamera && screenPos.z < 1.0,
+          visible: isFacingCamera && _vScreen.z < 1.0,
           assessment,
         };
       });
@@ -398,6 +436,7 @@ export function LunarGlobe3D({
     window.addEventListener("resize", handleResize);
 
     return () => {
+      observer.disconnect();
       cancelAnimationFrame(animId);
       window.removeEventListener("resize", handleResize);
       renderer.dispose();
