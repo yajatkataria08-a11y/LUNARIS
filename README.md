@@ -1,11 +1,22 @@
  <div align="center">
 
-<!-- ANIMATED HEADER BANNER -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f0c29,50:302b63,100:0EA5E9&height=200&section=header&text=🌑%20LUNARIS&fontSize=72&fontColor=38BDF8&fontAlignY=38&desc=LunaSafe%20AI%20·%20ISRO%20Chandrayaan%20Lava%20Tube%20Intelligence%20Platform&descSize=16&descAlignY=58&descColor=94A3B8&animation=fadeIn" width="100%"/>
+<!-- ANIMATED SCI-FI HUD HEADER BANNER -->
+<a href="https://github.com/yajatkataria08-a11y/LUNARIS">
+  <img src="./assets/readme-header.svg" alt="LUNARIS Animated Cosmic Header" width="100%"/>
+</a>
+
+<br/><br/>
 
 <!-- ANIMATED TYPING SVG -->
 <a href="https://github.com/yajatkataria08-a11y/LUNARIS">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=19&duration=3000&pause=1000&color=38BDF8&center=true&vCenter=true&width=700&height=50&lines=Mapping+lunar+lava+tubes+with+Chandrayaan+AI;43%2F43+tests+passing+%7C+0+TypeScript+errors;Marius+Hills+LHI%3A+95.6%2F100+(Tier+1+Priority);ISRO+OHRC+0.25m+%2B+DFSAR+m-chi+polarimetry" alt="LUNARIS Animated Typing" />
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=19&duration=3000&pause=1000&color=38BDF8&center=true&vCenter=true&width=700&height=50&lines=Mapping+lunar+lava+tubes+with+Chandrayaan+AI;43%2F43+tests+passing+%7C+0+TypeScript+errors;Marius+Hills+LHI%3A+95.6%2F100+(Tier+1+Priority);ISRO+OHRC+0.25m+%2B+DFSAR+m-chi+polarimetry;60+FPS+Hardware-Accelerated+3D+Lunar+Atlas" alt="LUNARIS Animated Typing" />
+</a>
+
+<br/>
+
+<!-- ANIMATED HUD METRIC CARDS -->
+<a href="https://github.com/yajatkataria08-a11y/LUNARIS">
+  <img src="./assets/readme-stats.svg" alt="LUNARIS Live Telemetry HUD Metrics" width="100%"/>
 </a>
 
 <br/>
@@ -44,39 +55,9 @@
 
 <div align="center">
 
-```
-  🛰️ Chandrayaan-1 TMC        🛰️ Chandrayaan-2 OHRC        🛰️ Chandrayaan-3 ChaSTE
-         │  Mini-SAR                  │  DFSAR  │  TMC-2               │  In-situ Probe
-         ▼                           ▼          ▼                       ▼
-  ┌─────────────────────────────────────────────────────────────────────────────┐
-  │                         ISRO PRADAN DATA INGESTION                         │
-  │          PDS4 · HDF5 · GeoTIFF  →  Multi-modal Tensor Fusion               │
-  └───────────────────────────────┬─────────────────────────────────────────────┘
-                                  │
-                    ┌─────────────▼─────────────┐
-                    │   AttentionUNet + MMD       │
-                    │   Transfer Learning Engine  │
-                    │  MOSDAC Deccan → Lunar      │
-                    └─────────────┬───────────────┘
-                                  │
-         ┌────────────────────────┼────────────────────────┐
-         ▼                        ▼                         ▼
-  ┌─────────────┐        ┌───────────────┐         ┌──────────────┐
-  │ DFSAR m-chi │        │  ChaSTE Therm │         │ FoS Geomech  │
-  │ Polarimetry │        │  Profile Solve│         │ Arch Solver  │
-  └──────┬──────┘        └───────┬───────┘         └──────┬───────┘
-         └────────────────────┬──┘──────────────────────┘
-                              │
-                    ┌─────────▼─────────┐
-                    │  ISRO LHI Scoring │
-                    │   Engine  0–100   │
-                    └─────────┬─────────┘
-                              │
-              ┌───────────────▼───────────────┐
-              │   Next.js 15 + Three.js UI     │
-              │   3D Globe · Rankings · Dossier│
-              └───────────────────────────────┘
-```
+<a href="https://github.com/yajatkataria08-a11y/LUNARIS">
+  <img src="./assets/readme-pipeline.svg" alt="LUNARIS System Architecture and Inversion Pipeline" width="100%"/>
+</a>
 
 </div>
 
@@ -182,6 +163,16 @@ flowchart TD
 ---
 
 ## 🔬 Three Technical Levers — What Makes This Science-Grade
+
+<div align="center">
+
+<a href="https://github.com/yajatkataria08-a11y/LUNARIS">
+  <img src="./assets/readme-subsurface.svg" alt="LUNARIS Subsurface Tomography and Physics Inversion Cross-Section" width="100%"/>
+</a>
+
+</div>
+
+<br/>
 
 <div align="center">
 
@@ -476,6 +467,11 @@ Built with deep respect for the scientists and engineers at **ISRO SAC**, **PRL*
 
 *All satellite imagery and terrain data sourced from ISRO ISSDC PRADAN portal (pradan.issdc.gov.in) and NASA PDS4 open-access archives. No proprietary data was used.*
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0EA5E9,50:302b63,100:0f0c29&height=120&section=footer&animation=fadeIn" width="100%"/>
+<br/><br/>
+
+<!-- ANIMATED SCI-FI HUD FOOTER BANNER -->
+<a href="https://github.com/yajatkataria08-a11y/LUNARIS">
+  <img src="./assets/readme-footer.svg" alt="LUNARIS Mission Homage Animated Footer" width="100%"/>
+</a>
 
 </div>
