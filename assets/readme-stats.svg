@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 240" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="statsBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#040610"/>
+      <stop offset="50%" stop-color="#0a0f28"/>
+      <stop offset="100%" stop-color="#03040b"/>
+    </linearGradient>
+
+    <!-- Card Gradients -->
+    <linearGradient id="cardGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0c4a6e" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#082f49" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="cardGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2e1065" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#1e1b4b" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="cardGrad3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#022c22" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="cardGrad4" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#701a75" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#4a044e" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <!-- Glowing Filters -->
+    <filter id="neonBlur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes pulseGlowRing {
+      0%, 100% { stroke-opacity: 0.4; }
+      50% { stroke-opacity: 1; }
+    }
+    @keyframes fillProgress {
+      0% { stroke-dashoffset: 260; }
+      100% { stroke-dashoffset: 20; }
+    }
+    @keyframes ledBlink {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+
+    .card-border-1 { animation: pulseGlowRing 3s ease-in-out infinite; }
+    .card-border-2 { animation: pulseGlowRing 3.5s ease-in-out infinite 0.5s; }
+    .card-border-3 { animation: pulseGlowRing 3.2s ease-in-out infinite 1s; }
+    .card-border-4 { animation: pulseGlowRing 3.8s ease-in-out infinite 1.5s; }
+    .gauge-circle { stroke-dasharray: 260; animation: fillProgress 2.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+    .led-beacon { animation: ledBlink 2s ease-in-out infinite; }
+  </style>
+
+  <!-- Background Canvas -->
+  <rect width="1200" height="240" rx="16" fill="url(#statsBg)"/>
+
+  <!-- CARD 1: #1 Candidate — Marius Hills Hole -->
+  <g transform="translate(40, 25)">
+    <rect x="0" y="0" width="260" height="190" rx="12" fill="url(#cardGrad1)" stroke="#38bdf8" stroke-width="1.2" class="card-border-1"/>
+    <!-- LED Beacon -->
+    <circle cx="22" cy="24" r="4" fill="#38bdf8" filter="url(#neonBlur)" class="led-beacon"/>
+    <text x="34" y="27" fill="#7dd3fc" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="800" letter-spacing="1">ISRO LHI #1 CANDIDATE</text>
+    <rect x="188" y="14" width="56" height="18" rx="4" fill="#0369a1"/>
+    <text x="216" y="26" fill="#e0f2fe" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700" text-anchor="middle">TIER 1</text>
+
+    <!-- Big Score Metric -->
+    <text x="20" y="76" fill="#ffffff" font-family="'JetBrains Mono', monospace" font-size="36" font-weight="900" filter="url(#neonBlur)">
+      95.6
+      <tspan font-size="14" fill="#7dd3fc" font-weight="700">/ 100</tspan>
+    </text>
+    <text x="20" y="100" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700">Marius Hills Hole</text>
+    <text x="20" y="118" fill="#94a3b8" font-family="'Space Grotesk', sans-serif" font-size="11">Oceanus Procellarum Mare</text>
+
+    <!-- Progress Meter Bar -->
+    <line x1="20" y1="140" x2="240" y2="140" stroke="#0369a1" stroke-width="6" stroke-linecap="round"/>
+    <line x1="20" y1="140" x2="230" y2="140" stroke="#38bdf8" stroke-width="6" stroke-linecap="round" filter="url(#neonBlur)"/>
+
+    <!-- Bottom Stat Pill -->
+    <text x="20" y="166" fill="#bae6fd" font-family="'JetBrains Mono', monospace" font-size="9.5">
+      95% CI: <tspan fill="#ffffff" font-weight="700">[93.4 - 97.6]</tspan> · FoS 5.2
+    </text>
+  </g>
+
+  <!-- CARD 2: Adversarial Precision (Shadow Discriminator) -->
+  <g transform="translate(325, 25)">
+    <rect x="0" y="0" width="260" height="190" rx="12" fill="url(#cardGrad2)" stroke="#a855f7" stroke-width="1.2" class="card-border-2"/>
+    <circle cx="22" cy="24" r="4" fill="#c084fc" filter="url(#neonBlur)" class="led-beacon"/>
+    <text x="34" y="27" fill="#d8b4fe" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="800" letter-spacing="1">FALSE POSITIVE SUPPRESSION</text>
+    <rect x="188" y="14" width="56" height="18" rx="4" fill="#581c87"/>
+    <text x="216" y="26" fill="#f5d0fe" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700" text-anchor="middle">-49% FP</text>
+
+    <!-- Big Rate Metric -->
+    <text x="20" y="76" fill="#ffffff" font-family="'JetBrains Mono', monospace" font-size="36" font-weight="900" filter="url(#neonBlur)">
+      7.8
+      <tspan font-size="14" fill="#c084fc" font-weight="700">FP/km²</tspan>
+    </text>
+    <text x="20" y="100" fill="#e879f9" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700">91.8% Precision Rate</text>
+    <text x="20" y="118" fill="#94a3b8" font-family="'Space Grotesk', sans-serif" font-size="11">Cuts baseline 15.3 FP/km² in half</text>
+
+    <!-- Progress Meter Bar -->
+    <line x1="20" y1="140" x2="240" y2="140" stroke="#581c87" stroke-width="6" stroke-linecap="round"/>
+    <line x1="20" y1="140" x2="222" y2="140" stroke="#c084fc" stroke-width="6" stroke-linecap="round" filter="url(#neonBlur)"/>
+
+    <text x="20" y="166" fill="#f5d0fe" font-family="'JetBrains Mono', monospace" font-size="9.5">
+      Dice Score: <tspan fill="#ffffff" font-weight="700">0.84</tspan> (vs 0.76 baseline)
+    </text>
+  </g>
+
+  <!-- CARD 3: Subsurface Thermal Stability -->
+  <g transform="translate(610, 25)">
+    <rect x="0" y="0" width="260" height="190" rx="12" fill="url(#cardGrad3)" stroke="#10b981" stroke-width="1.2" class="card-border-3"/>
+    <circle cx="22" cy="24" r="4" fill="#34d399" filter="url(#neonBlur)" class="led-beacon"/>
+    <text x="34" y="27" fill="#6ee7b7" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="800" letter-spacing="1">CHASTE THERMAL STABILITY</text>
+    <rect x="188" y="14" width="56" height="18" rx="4" fill="#065f46"/>
+    <text x="216" y="26" fill="#a7f3d0" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700" text-anchor="middle">STABLE</text>
+
+    <!-- Big Temp Metric -->
+    <text x="20" y="76" fill="#ffffff" font-family="'JetBrains Mono', monospace" font-size="36" font-weight="900" filter="url(#neonBlur)">
+      –20°C
+      <tspan font-size="14" fill="#34d399" font-weight="700">STEADY</tspan>
+    </text>
+    <text x="20" y="100" fill="#34d399" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700">Subsurface Cave Vault</text>
+    <text x="20" y="118" fill="#94a3b8" font-family="'Space Grotesk', sans-serif" font-size="11">Mitigates 250°C surface swings</text>
+
+    <!-- Progress Meter Bar -->
+    <line x1="20" y1="140" x2="240" y2="140" stroke="#065f46" stroke-width="6" stroke-linecap="round"/>
+    <line x1="20" y1="140" x2="215" y2="140" stroke="#34d399" stroke-width="6" stroke-linecap="round" filter="url(#neonBlur)"/>
+
+    <text x="20" y="166" fill="#a7f3d0" font-family="'JetBrains Mono', monospace" font-size="9.5">
+      k ≈ <tspan fill="#ffffff" font-weight="700">0.002 W/m·K</tspan> (In-situ ChaSTE)
+    </text>
+  </g>
+
+  <!-- CARD 4: Verification & Test Integrity -->
+  <g transform="translate(895, 25)">
+    <rect x="0" y="0" width="265" height="190" rx="12" fill="url(#cardGrad4)" stroke="#e879f9" stroke-width="1.2" class="card-border-4"/>
+    <circle cx="22" cy="24" r="4" fill="#f472b6" filter="url(#neonBlur)" class="led-beacon"/>
+    <text x="34" y="27" fill="#f5d0fe" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="800" letter-spacing="1">CODE &amp; MODEL INTEGRITY</text>
+    <rect x="193" y="14" width="56" height="18" rx="4" fill="#86198f"/>
+    <text x="221" y="26" fill="#fdf4ff" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700" text-anchor="middle">100% OK</text>
+
+    <!-- Big Test Metric -->
+    <text x="20" y="76" fill="#ffffff" font-family="'JetBrains Mono', monospace" font-size="36" font-weight="900" filter="url(#neonBlur)">
+      43 / 43
+      <tspan font-size="14" fill="#f472b6" font-weight="700">TESTS</tspan>
+    </text>
+    <text x="20" y="100" fill="#f472b6" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700">0 TypeScript Errors</text>
+    <text x="20" y="118" fill="#94a3b8" font-family="'Space Grotesk', sans-serif" font-size="11">Production Build Verified</text>
+
+    <!-- Progress Meter Bar -->
+    <line x1="20" y1="140" x2="245" y2="140" stroke="#86198f" stroke-width="6" stroke-linecap="round"/>
+    <line x1="20" y1="140" x2="245" y2="140" stroke="#f472b6" stroke-width="6" stroke-linecap="round" filter="url(#neonBlur)"/>
+
+    <text x="20" y="166" fill="#fdf4ff" font-family="'JetBrains Mono', monospace" font-size="9.5">
+      MIT Licensed · <tspan fill="#ffffff" font-weight="700">Open Science Ready</tspan>
+    </text>
+  </g>
+</svg>
